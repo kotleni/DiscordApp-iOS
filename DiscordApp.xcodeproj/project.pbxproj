@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
-		5AC087B329C7869000A01A58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B229C7869000A01A58 /* ViewController.swift */; };
+		5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B229C7869000A01A58 /* GuildsViewController.swift */; };
 		5AC087B629C7869000A01A58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B429C7869000A01A58 /* Main.storyboard */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
 		5AC087BB29C7869200A01A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */; };
+		5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C329C78C6800A01A58 /* DiscordApi.swift */; };
+		5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */; };
+		5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */; };
+		5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CA29C7AA6E00A01A58 /* Guild.swift */; };
+		5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CC29C7AA8400A01A58 /* Channel.swift */; };
+		5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* Author.swift */; };
+		5AC087D129C7AAA800A01A58 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D029C7AAA800A01A58 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5AC087B229C7869000A01A58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AC087B229C7869000A01A58 /* GuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsViewController.swift; sourceTree = "<group>"; };
 		5AC087B529C7869000A01A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AC087B729C7869200A01A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC087BA29C7869200A01A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AC087BC29C7869200A01A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AC087C329C78C6800A01A58 /* DiscordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordApi.swift; sourceTree = "<group>"; };
+		5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		5AC087CA29C7AA6E00A01A58 /* Guild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
+		5AC087CC29C7AA8400A01A58 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		5AC087CE29C7AA9500A01A58 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		5AC087D029C7AAA800A01A58 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,38 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
-				5AC087B229C7869000A01A58 /* ViewController.swift */,
+				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
+				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
+				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
 				5AC087B429C7869000A01A58 /* Main.storyboard */,
 				5AC087B729C7869200A01A58 /* Assets.xcassets */,
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
 				5AC087BC29C7869200A01A58 /* Info.plist */,
 			);
 			path = DiscordApp;
+			sourceTree = "<group>";
+		};
+		5AC087C229C78C5900A01A58 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087C929C7AA6600A01A58 /* Models */,
+				5AC087C329C78C6800A01A58 /* DiscordApi.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5AC087C929C7AA6600A01A58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087CA29C7AA6E00A01A58 /* Guild.swift */,
+				5AC087CC29C7AA8400A01A58 /* Channel.swift */,
+				5AC087CE29C7AA9500A01A58 /* Author.swift */,
+				5AC087D029C7AAA800A01A58 /* Message.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AC087B329C7869000A01A58 /* ViewController.swift in Sources */,
+				5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */,
+				5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */,
+				5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */,
+				5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */,
+				5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */,
+				5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */,
+				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
+				5AC087D129C7AAA800A01A58 /* Message.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
 				5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */,
 			);
@@ -302,9 +346,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kotleni.DiscordApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,9 +377,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kotleni.DiscordApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
