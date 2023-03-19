@@ -37,6 +37,7 @@ final class DiscordApi {
         }.resume()
     }
     
+    /// Get guilds from account
     func getGuilds(completion: @escaping ([Guild]) -> Void) {
         makeRequest(url: "/users/@me/guilds") { data in
             let decoder = JSONDecoder()
@@ -47,6 +48,7 @@ final class DiscordApi {
         }
     }
     
+    /// Get channels from guild
     func getChannels(guildId: String, completion: @escaping ([Channel]) -> Void) {
         makeRequest(url: "/guilds/\(guildId)/channels") { data in
             let decoder = JSONDecoder()
@@ -57,6 +59,7 @@ final class DiscordApi {
         }
     }
     
+    /// Get messages from channel
     func getMessages(channelId: String, completion: @escaping ([Message]) -> Void) {
         makeRequest(url: "/channels/\(channelId)/messages") { data in
             let decoder = JSONDecoder()
