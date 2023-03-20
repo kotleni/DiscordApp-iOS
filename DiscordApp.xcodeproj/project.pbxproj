@@ -90,8 +90,8 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
-				5AC087D629C868A800A01A58 /* UI */,
 				5AC087C229C78C5900A01A58 /* Network */,
+				5AC087D629C868A800A01A58 /* UI */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
 				5AC087D229C85B7A00A01A58 /* Extensions.swift */,

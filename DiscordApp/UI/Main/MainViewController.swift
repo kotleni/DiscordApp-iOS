@@ -43,7 +43,9 @@ final class MainViewController: UIViewController {
                 guard let self = self else { return }
                 err.presetErrorAlert(viewController: self)
             case .success(let guilds):
-                self?.guilds = guilds
+                self?.guilds = guilds.sorted(by: { first, _ in
+                    return first.owner // owned first
+                })
                 self?.collectionView.reloadData()
             }
         }
