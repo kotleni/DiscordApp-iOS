@@ -60,7 +60,7 @@ final class MessageTableViewCell: UITableViewCell {
         nameLabel.text = message.author.username
         messageLabel.text = message.content
         timestampLabel.text = getDate(message.timestamp)
-        setImage(by: getAvatarURL(for: message.author))
+        setImage(by: message.author.getAvatarUrl())
     }
     
     private func getDate(_ isoDate: String) -> String {
@@ -82,14 +82,12 @@ final class MessageTableViewCell: UITableViewCell {
         return "\(dayString).\(monthString).\(year) \(hourString):\(minuteString)"
     }
     
-    private func getAvatarURL(for author: User) -> URL? {
-        author.avatar != nil ? URL(string: "https://cdn.discordapp.com/avatars/\(author.id)/\(author.avatar ?? "")") : nil
-    }
-    
-    private func setImage(by url: URL?) {
-        let defaultAvatartLink = "https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-512.png" // TODO: do normal single char avatar generator
+    private func setImage(by url: String?) {
+        // TODO: do normal single char avatar generator
+        let defaultAvatartLink = "https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-512.png"
+        
         if let url = url {
-            avatarImageView.loadImage(url.absoluteString)
+            avatarImageView.loadImage(url)
         } else {
             avatarImageView.loadImage(defaultAvatartLink)
         }
