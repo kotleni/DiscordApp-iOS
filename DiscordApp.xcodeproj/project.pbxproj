@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B229C7869000A01A58 /* GuildsViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				5AC087DA29C8828A00A01A58 /* RoundedImageView.swift */,
 				5AC087DC29C882B600A01A58 /* GuildViewCell.swift */,
+				5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */,
