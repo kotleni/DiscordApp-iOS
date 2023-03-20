@@ -43,8 +43,8 @@ final class MainViewController: UIViewController {
         view.addSubview(channelsCollectionView)
         
         NSLayoutConstraint.activate([
-            guildsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            guildsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            guildsCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            guildsCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             guildsCollectionView.widthAnchor.constraint(equalToConstant: 90),
             guildsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
