@@ -63,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A8C86C429C8BE4F00AB91A8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		5AC087A229C7869000A01A58 = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +127,11 @@
 		5AC087D629C868A800A01A58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5A8C86C429C8BE4F00AB91A8 /* Main */,
 				5AC087D929C8828100A01A58 /* Subviews */,
 				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
 				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
 				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
-				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
