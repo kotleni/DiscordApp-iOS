@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Message: Decodable {
+class Message: Decodable, Equatable {
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     let id: String
     let type: Int
     let content: String

@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: UIViewController
 final class MessagesViewController: UITableViewController {
-    
+    var channel: Channel?
     let rotationAngle = 3.14159265359
     
     private var messages = Array<Message>() {
@@ -19,23 +19,38 @@ final class MessagesViewController: UITableViewController {
         }
     }
     
+    convenience init(channel: Channel) {
+        self.init()
+        self.channel = channel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureVC()
         configureTableView()
     }
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        startWatchdog()
+    }
+    
+    private func startWatchdog() {
+        Timer.scheduledTimer(timeInterval: 0.50, target: self, selector: #selector(updateChat), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func updateChat() {
         getMessages()
     }
     
     private func getMessages() {
-        DiscordApi.shared.getMessages(channelId: "1013883033486639187") { result in
+        guard let channelId = channel?.id else { return }
+        DiscordApi.shared.getMessages(channelId: channelId) { result in
             switch result {
             case .success(let messages):
-                self.messages = messages
-                messages.forEach { message in
-                    print(message.content)
+                if messages.last != self.messages.last {
+                    self.messages = messages
+//                    self.tableView.scrollToRow(at: IndexPath(row: .zero, section: .zero), at: .bottom, animated: true)
                 }
             case .failure(let err):
                 err.presetErrorAlert(viewController: self)
@@ -43,9 +58,16 @@ final class MessagesViewController: UITableViewController {
         }
     }
     
+    private func configureVC() {
+        title = channel?.name ?? "Text channel"
+    }
+    
     private func configureTableView() {
+        let padding = 10.0
         tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.nameOfClass)
-        tableView.rowHeight = 300.0
+        tableView.contentInset.bottom = self.statusBarHeight + padding
+        tableView.estimatedRowHeight = 300.0
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.transform = CGAffineTransform(rotationAngle: rotationAngle)
     }
     
@@ -57,7 +79,6 @@ final class MessagesViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.nameOfClass, for: indexPath) as? MessageTableViewCell else { return UITableViewCell() }
         cell.transform = CGAffineTransform(rotationAngle: rotationAngle)
         cell.setMessage(messages[indexPath.row])
-        
         return cell
     }
     

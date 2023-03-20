@@ -20,6 +20,7 @@ final class MessageTableViewCell: UITableViewCell {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.text = "Message..."
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -103,14 +104,17 @@ final class MessageTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         let padding = 10.0
+        let avatarWidth = 50.0
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 75.0),
+            avatarImageView.widthAnchor.constraint(equalToConstant: avatarWidth),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
+            avatarImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -padding),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
             nameLabel.trailingAnchor.constraint(equalTo: timestampLabel.leadingAnchor, constant: -padding),
+            nameLabel.bottomAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -padding),
             timestampLabel.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
             timestampLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             messageLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
