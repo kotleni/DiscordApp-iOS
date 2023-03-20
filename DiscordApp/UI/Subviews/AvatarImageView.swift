@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RoundedImageView: UIImageView {
+class AvatarImageView: UIImageView {
     public var isPrepareForReuseEnabled = true
     private let imageLoader = ImageLoader()
     
