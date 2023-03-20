@@ -22,6 +22,7 @@
 		5AC087D129C7AAA800A01A58 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D029C7AAA800A01A58 /* Message.swift */; };
 		5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D229C85B7A00A01A58 /* Extensions.swift */; };
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
+		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5AC087D029C7AAA800A01A58 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5AC087D229C85B7A00A01A58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,18 +76,16 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AC087D629C868A800A01A58 /* UI */,
 				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
-				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
-				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
-				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
-				5AC087B429C7869000A01A58 /* Main.storyboard */,
-				5AC087B729C7869200A01A58 /* Assets.xcassets */,
-				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
-				5AC087BC29C7869200A01A58 /* Info.plist */,
 				5AC087D229C85B7A00A01A58 /* Extensions.swift */,
 				5AC087D429C8656000A01A58 /* Logger.swift */,
+				5AC087B429C7869000A01A58 /* Main.storyboard */,
+				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
+				5AC087B729C7869200A01A58 /* Assets.xcassets */,
+				5AC087BC29C7869200A01A58 /* Info.plist */,
 			);
 			path = DiscordApp;
 			sourceTree = "<group>";
@@ -108,6 +108,17 @@
 				5AC087D029C7AAA800A01A58 /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5AC087D629C868A800A01A58 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
+				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
+				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
+				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */,
+				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */,
 				5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */,
 				5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */,
