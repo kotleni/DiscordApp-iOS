@@ -11,6 +11,8 @@ import UIKit
 // MARK: UIViewController
 final class MessagesViewController: UITableViewController {
     
+    let rotationAngle = 3.14159265359
+    
     private var messages = Array<Message>() {
         didSet {
             tableView.reloadData()
@@ -44,6 +46,7 @@ final class MessagesViewController: UITableViewController {
     private func configureTableView() {
         tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.nameOfClass)
         tableView.rowHeight = 300.0
+        tableView.transform = CGAffineTransform(rotationAngle: rotationAngle)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +55,7 @@ final class MessagesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.nameOfClass, for: indexPath) as? MessageTableViewCell else { return UITableViewCell() }
+        cell.transform = CGAffineTransform(rotationAngle: rotationAngle)
         cell.setMessage(messages[indexPath.row])
         
         return cell

@@ -59,6 +59,7 @@ final class MessageTableViewCell: UITableViewCell {
         nameLabel.text = message.author.username
         messageLabel.text = message.content
         timestampLabel.text = getDate(message.timestamp)
+        setImage(by: getAvatarURL(for: message.author))
     }
     
     private func getDate(_ isoDate: String) -> String {
@@ -72,12 +73,25 @@ final class MessageTableViewCell: UITableViewCell {
         guard let realDate = isoDateFormatter.date(from: isoDate) else { return "error" }
         let calendar = NSCalendar.current
         let components = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: realDate)
-        guard var day = components.day, var month = components.month, let year = components.year, var hour = components.hour, var minute = components.minute else { return "error" }
+        guard let day = components.day, let month = components.month, let year = components.year, let hour = components.hour, let minute = components.minute else { return "error" }
         let dayString: String = (day < 10) ? "0\(day)" : String(day)
         let monthString: String = (month < 10) ? "0\(month)" : String(month)
         let hourString: String = (hour < 10) ? "0\(hour)" : String(hour)
         let minuteString: String = (minute < 10) ? "0\(minute)" : String(minute)
         return "\(dayString).\(monthString).\(year) \(hourString):\(minuteString)"
+    }
+    
+    private func getAvatarURL(for author: Author) -> URL? {
+        author.avatar != nil ? URL(string: "https://cdn.discordapp.com/avatars/\(author.id)/\(author.avatar ?? "")") : nil
+    }
+    
+    private func setImage(by url: URL?) {
+        let defaultAvatartLink = "https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-512.png" // TODO: do normal single char avatar generator
+        if let url = url {
+            avatarImageView.loadImage(url.absoluteString)
+        } else {
+            avatarImageView.loadImage(defaultAvatartLink)
+        }
     }
     
     private func setGUISettings() {
