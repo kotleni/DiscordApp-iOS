@@ -120,6 +120,7 @@ final class DiscordApi {
             let data = try decoder.decode(T.self, from: data)
             return .success(data)
         } catch {
+            let error = NetworkingError.parseError(data, code: code)
             Logger.logError(error: error)
             return .failure(.other(error))
         }
