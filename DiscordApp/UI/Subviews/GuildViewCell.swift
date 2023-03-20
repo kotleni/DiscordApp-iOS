@@ -58,12 +58,18 @@ class GuildViewCell: UICollectionViewCell {
     }
     
     func select() {
-        selectorView.alpha = 1.0
         isCellSelected = true
+        
+        UIView.animate(withDuration: 0.3) {
+            self.selectorView.alpha = 1.0
+        }
     }
     
     func deselect() {
-        selectorView.alpha = 0.0
         isCellSelected = false
+        
+        UIView.animate(withDuration: 0.3) {
+            self.selectorView.alpha = 0.0
+        }
     }
 }
