@@ -10,19 +10,7 @@ import UIKit
 // MARK: UIViewController
 final class MainViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { _, _ in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-            
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(70))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item])
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-            
-            return section
-        }))
+        let view = UICollectionView(frame: .zero, collectionViewLayout: createCollectionLayout())
         
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 224/255, green: 225/255, blue: 229/255, alpha: 1.0)
@@ -59,6 +47,22 @@ final class MainViewController: UIViewController {
                 self?.collectionView.reloadData()
             }
         }
+    }
+    
+    private func createCollectionLayout() -> UICollectionViewCompositionalLayout {
+        UICollectionViewCompositionalLayout(sectionProvider: { _, _ in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(70))
+            let group: NSCollectionLayoutGroup
+            if #available(iOS 16.0, *) {
+                group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+            } else {
+                group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            }
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        })
     }
 }
 

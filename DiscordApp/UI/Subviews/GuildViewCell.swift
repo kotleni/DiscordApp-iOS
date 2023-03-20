@@ -18,11 +18,11 @@ class GuildViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubview(imageView)
         
+        let padding = 10.0
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            imageView.leftAnchor.constraint(lessThanOrEqualTo: contentView.leftAnchor, constant: 0),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
+            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         ])
     }
