@@ -33,8 +33,8 @@ final class MessageTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var avatarImageView: RoundedImageView = {
-        let avatarImageView = RoundedImageView()
+    private lazy var avatarImageView: AvatarImageView = {
+        let avatarImageView = AvatarImageView()
         avatarImageView.backgroundColor = .green
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
@@ -82,7 +82,7 @@ final class MessageTableViewCell: UITableViewCell {
         return "\(dayString).\(monthString).\(year) \(hourString):\(minuteString)"
     }
     
-    private func getAvatarURL(for author: Author) -> URL? {
+    private func getAvatarURL(for author: User) -> URL? {
         author.avatar != nil ? URL(string: "https://cdn.discordapp.com/avatars/\(author.id)/\(author.avatar ?? "")") : nil
     }
     

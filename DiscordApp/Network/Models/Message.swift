@@ -9,7 +9,7 @@ import Foundation
 
 // ref: https://discord.com/developers/docs/resources/channel#message-object
 // types: https://discord.com/developers/docs/resources/channel#message-object-message-types
-class Message: Decodable {
+class Message: Decodable, Equatable {
     let id: String                              // ID, unique for channel
     let channel_id: String                      // ID of channel
     let author: User                            // author of this message (not guaranteed a valid user, see below)
