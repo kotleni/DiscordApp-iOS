@@ -23,6 +23,8 @@
 		5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D229C85B7A00A01A58 /* Extensions.swift */; };
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
+		5AC087DB29C8828A00A01A58 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DA29C8828A00A01A58 /* RoundedImageView.swift */; };
+		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5AC087D229C85B7A00A01A58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5AC087DA29C8828A00A01A58 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +117,22 @@
 		5AC087D629C868A800A01A58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5AC087D929C8828100A01A58 /* Subviews */,
 				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
 				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
 				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
 				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		5AC087D929C8828100A01A58 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087DA29C8828A00A01A58 /* RoundedImageView.swift */,
+				5AC087DC29C882B600A01A58 /* GuildViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,8 @@
 				5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */,
 				5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */,
 				5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */,
+				5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */,
+				5AC087DB29C8828A00A01A58 /* RoundedImageView.swift in Sources */,
 				5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
