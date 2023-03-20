@@ -14,8 +14,8 @@ struct Message: Decodable {
     let channel_id: String                      // ID of channel
     let author: User                            // author of this message (not guaranteed a valid user, see below)
     let content: String                         // contents of the message
-    let timestamp: String                       // when this message was sent
-    let edited_timestamp: String                // when this message was edited (or null if never)
+    let timestamp: String                       // when this message was sent (ISO8601)
+    let edited_timestamp: String                // when this message was edited (ISO8601) (or null if never)
     let tts: Bool                               // whether this was a TTS message
     let mention_everyone: String                // whether this message mentions everyone
     let mentions: [User]                        // users specifically mentioned in the message
