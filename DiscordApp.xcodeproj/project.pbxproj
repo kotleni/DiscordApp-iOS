@@ -12,12 +12,9 @@
 		5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
-		5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B229C7869000A01A58 /* GuildsViewController.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
 		5AC087BB29C7869200A01A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */; };
 		5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C329C78C6800A01A58 /* DiscordApi.swift */; };
-		5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */; };
-		5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */; };
 		5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CA29C7AA6E00A01A58 /* Guild.swift */; };
 		5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CC29C7AA8400A01A58 /* Channel.swift */; };
 		5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* Author.swift */; };
@@ -36,13 +33,10 @@
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5AC087B229C7869000A01A58 /* GuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsViewController.swift; sourceTree = "<group>"; };
 		5AC087B729C7869200A01A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC087BA29C7869200A01A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AC087BC29C7869200A01A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC087C329C78C6800A01A58 /* DiscordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordApi.swift; sourceTree = "<group>"; };
-		5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
-		5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		5AC087CA29C7AA6E00A01A58 /* Guild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
 		5AC087CC29C7AA8400A01A58 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5AC087CE29C7AA9500A01A58 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
@@ -68,9 +62,20 @@
 		5A8C86C429C8BE4F00AB91A8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5A8C86CA29C8C2F900AB91A8 /* Subviews */,
 				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		5A8C86CA29C8C2F900AB91A8 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				5AC087DA29C8828A00A01A58 /* GuildImageView.swift */,
+				5AC087DC29C882B600A01A58 /* GuildViewCell.swift */,
+				5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		5AC087A229C7869000A01A58 = {
@@ -132,9 +137,6 @@
 			children = (
 				5A8C86C429C8BE4F00AB91A8 /* Main */,
 				5AC087D929C8828100A01A58 /* Subviews */,
-				5AC087B229C7869000A01A58 /* GuildsViewController.swift */,
-				5AC087C529C7A0DF00A01A58 /* ChannelsViewController.swift */,
-				5AC087C729C7A34D00A01A58 /* MessagesViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -142,9 +144,6 @@
 		5AC087D929C8828100A01A58 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				5AC087DA29C8828A00A01A58 /* GuildImageView.swift */,
-				5AC087DC29C882B600A01A58 /* GuildViewCell.swift */,
-				5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -224,12 +223,9 @@
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */,
 				5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */,
-				5AC087C829C7A34D00A01A58 /* MessagesViewController.swift in Sources */,
 				5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */,
-				5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */,
 				5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */,
 				5AC087DB29C8828A00A01A58 /* GuildImageView.swift in Sources */,
-				5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* Message.swift in Sources */,
