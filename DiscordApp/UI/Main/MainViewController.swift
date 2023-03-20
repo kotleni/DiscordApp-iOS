@@ -144,9 +144,8 @@ extension MainViewController: UICollectionViewDataSource {
         switch collectionView {
         case guildsCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "guild", for: indexPath) as! GuildViewCell
-            let guildId = guilds[indexPath.row].id
-            guard let guildIcon = guilds[indexPath.row].icon else { return cell }
-            let url = "https://cdn.discordapp.com/icons/\(guildId)/\(String(describing: guildIcon)).png"
+            let guild = guilds[indexPath.row]
+            guard let url = guild.getIconUrl() else { return cell }
             cell.configure(url: url)
             return cell
         case channelsCollectionView:

@@ -20,4 +20,9 @@ struct Guild: Decodable {
     let permissions: String?        // total permissions for the user in the guild (excludes overwrites)
     let afk_channel_id: String?     // id of afk channel
     // TODO: Add all properties
+    
+    func getIconUrl() -> String? {
+        guard let icon = icon else { return nil }
+        return "https://cdn.discordapp.com/icons/\(id)/\(icon).png"
+    }
 }

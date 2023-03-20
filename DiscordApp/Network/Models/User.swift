@@ -24,4 +24,9 @@ struct User: Decodable { // TODO: Rename to User
     let flags: Int?           // flags on a user's account
     let premium_type: Int?    // type of Nitro subscription
     let public_flags: Int?    // public flags on a user's account
+    
+    func getAvatarUrl() -> String? {
+        guard let avatar = avatar else { return nil }
+        return "https://cdn.discordapp.com/avatars/\(id)/\(avatar)"
+    }
 }
