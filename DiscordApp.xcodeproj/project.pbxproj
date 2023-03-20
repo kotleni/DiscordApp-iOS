@@ -27,6 +27,8 @@
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 		5AC087DB29C8828A00A01A58 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
+		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
+		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
+		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,16 +147,26 @@
 			isa = PBXGroup;
 			children = (
 				5A8C86C429C8BE4F00AB91A8 /* Main */,
-				5AC087D929C8828100A01A58 /* Subviews */,
+				F9D055E829C8C5AF00C55037 /* Messages */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		5AC087D929C8828100A01A58 /* Subviews */ = {
+		F9D055E829C8C5AF00C55037 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				F9D055EB29C8C70900C55037 /* Subviews */,
+				F9D055E629C8C5A100C55037 /* MessagesViewController.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		F9D055EB29C8C70900C55037 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				5A8C86CF29C8DFE700AB91A8 /* DividerView.swift */,
 				5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */,
+				F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -230,6 +244,7 @@
 				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
+				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
 				5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */,
 				5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */,
 				5A8C86CC29C8D20900AB91A8 /* Attachment.swift in Sources */,
@@ -244,6 +259,7 @@
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
 				5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */,
+				F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */,
 				5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

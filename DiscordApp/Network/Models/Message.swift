@@ -9,7 +9,7 @@ import Foundation
 
 // ref: https://discord.com/developers/docs/resources/channel#message-object
 // types: https://discord.com/developers/docs/resources/channel#message-object-message-types
-struct Message: Decodable {
+class Message: Decodable {
     let id: String                              // ID, unique for channel
     let channel_id: String                      // ID of channel
     let author: User                            // author of this message (not guaranteed a valid user, see below)
@@ -40,4 +40,8 @@ struct Message: Decodable {
     // let sticker_items: [MessageStickerItem]? // message contains stickers
     let position: Int?                          // message position in thread
     // let role_subscription_data: RoleSubscriptionData // see ref
+
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        lhs.id == rhs.id
+    }
 }
