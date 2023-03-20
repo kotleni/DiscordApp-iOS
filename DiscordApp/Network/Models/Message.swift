@@ -17,7 +17,7 @@ class Message: Decodable, Equatable {
     let timestamp: String                       // when this message was sent (ISO8601)
     let edited_timestamp: String?               // when this message was edited (ISO8601) (or null if never)
     let tts: Bool                               // whether this was a TTS message
-    let mention_everyone: String                // whether this message mentions everyone
+    let mention_everyone: Bool                  // whether this message mentions everyone
     let mentions: [User]                        // users specifically mentioned in the message
     // let mention_roles: [Role]                // roles specifically mentioned in this message
     // let mention_channels: [ChannelMention]   // channels specifically mentioned in this message
