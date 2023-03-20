@@ -205,9 +205,10 @@ extension MainViewController: UICollectionViewDelegate {
             let guildId = guilds[indexPath.row].id
             loadChannelsFor(guildId: guildId)
         case channelsCollectionView:
-            guard let currentGuildIndex = currentGuildIndex else { return }
-            let guild = guilds[currentGuildIndex]
+            //guard let currentGuildIndex = currentGuildIndex else { return }
+            //let guild = guilds[currentGuildIndex]
             let channel = channels[indexPath.row]
+            navigationController?.pushViewController(MessagesViewController(channel: channel), animated: true)
         default:
             fatalError("Wrong collection view")
         }
