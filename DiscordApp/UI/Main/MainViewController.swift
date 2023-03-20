@@ -13,7 +13,7 @@ final class MainViewController: UIViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createGuildCollectionLayout())
         
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 224/255, green: 225/255, blue: 229/255, alpha: 1.0)
+        view.backgroundColor = UIColor(named: "Bar")
         view.register(GuildViewCell.self, forCellWithReuseIdentifier: "guild")
         view.delegate = self
         view.dataSource = self
@@ -37,7 +37,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 228/255, green: 229/255, blue: 241/255, alpha: 1.0)
+        view.backgroundColor = UIColor(named: "Background")
         view.addSubview(guildsCollectionView)
         view.addSubview(channelsCollectionView)
         

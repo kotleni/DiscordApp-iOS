@@ -11,9 +11,8 @@ class DividerView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let color: UIColor = UIColor.systemGray4
         let bpath: UIBezierPath = UIBezierPath(rect: rect)
-        color.set()
+        UIColor(named: "Divider")?.set()
         bpath.fill()
     }
 }
