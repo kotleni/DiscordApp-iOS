@@ -44,7 +44,8 @@ final class MainViewController: UIViewController {
                 err.presetErrorAlert(viewController: self)
             case .success(let guilds):
                 self?.guilds = guilds.sorted(by: { first, _ in
-                    return first.owner // owned first
+                    guard let isOwner = first.owner else { return false }
+                    return isOwner // owned first
                 })
                 self?.collectionView.reloadData()
             }
@@ -77,8 +78,9 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "guild", for: indexPath) as! GuildViewCell
         let guildId = guilds[indexPath.row].id
-        let guildIcon = guilds[indexPath.row].icon
-        let url = "https://cdn.discordapp.com/icons/\(guildId)/\(guildIcon).png"
+        guard let guildIcon = guilds[indexPath.row].icon else { return cell }
+        let url = "https://cdn.discordapp.com/icons/\(guildId)/\(String(describing: guildIcon)).png"
+        print(url)
         cell.configure(url: url)
         return cell
     }
