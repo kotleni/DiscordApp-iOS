@@ -54,7 +54,7 @@ class GuildViewCell: UICollectionViewCell {
     }
     
     func configure(url: String) {
-        imageView.loadImageUsingCache(withUrl: url)
+        imageView.loadImage(url)
     }
     
     func select() {

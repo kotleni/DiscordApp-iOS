@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonCrypto
 
 extension Error {
     func presetErrorAlert(viewController: UIViewController) {
@@ -39,39 +40,112 @@ extension URLResponse {
     }
 }
 
-let imageCache = NSCache<NSString, UIImage>()
-extension UIImageView {
-    func loadImageUsingCache(withUrl urlString : String) {
-        let url = URL(string: urlString)
-        if url == nil {return}
-        self.image = nil
+extension NSLock {
+    func sync<T>(_ closure: () -> T) -> T {
+        lock()
+        defer { unlock() }
+        return closure()
+    }
+}
 
-        // check cached image
-        if let cachedImage = imageCache.object(forKey: urlString as NSString)  {
-            self.image = cachedImage
-            return
+// MARK: - Staging
+/// DataCache allows for parallel reads and writes. This is made possible by
+/// DataCacheStaging.
+///
+/// For example, when the data is added in cache, it is first added to staging
+/// and is removed from staging only after data is written to disk. Removal works
+/// the same way.
+struct Staging {
+    private(set) var changes = [String: Change]()
+    private(set) var changeRemoveAll: ChangeRemoveAll?
+
+    struct ChangeRemoveAll {
+        let id: Int
+    }
+
+    struct Change {
+        let key: String
+        let id: Int
+        let type: ChangeType
+    }
+
+    enum ChangeType {
+        case add(Data)
+        case remove
+    }
+
+    private var nextChangeId = 0
+
+    // MARK: Changes
+    func change(for key: String) -> ChangeType? {
+        if let change = changes[key] {
+            return change.type
+        }
+        if changeRemoveAll != nil {
+            return .remove
+        }
+        return nil
+    }
+
+    // MARK: Register Changes
+    mutating func add(data: Data, for key: String) {
+        nextChangeId += 1
+        changes[key] = Change(key: key, id: nextChangeId, type: .add(data))
+    }
+
+    mutating func removeData(for key: String) {
+        nextChangeId += 1
+        changes[key] = Change(key: key, id: nextChangeId, type: .remove)
+    }
+
+    mutating func removeAll() {
+        nextChangeId += 1
+        changeRemoveAll = ChangeRemoveAll(id: nextChangeId)
+        changes.removeAll()
+    }
+
+    // MARK: Flush Changes
+    mutating func flushed(_ staging: Staging) {
+        for change in staging.changes.values {
+            flushed(change)
+        }
+        if let change = staging.changeRemoveAll {
+            flushed(change)
+        }
+    }
+
+    mutating func flushed(_ change: Change) {
+        if let index = changes.index(forKey: change.key),
+            changes[index].value.id == change.id {
+            changes.remove(at: index)
+        }
+    }
+
+    mutating func flushed(_ change: ChangeRemoveAll) {
+        if changeRemoveAll?.id == change.id {
+            changeRemoveAll = nil
+        }
+    }
+}
+
+extension String {
+    /// Calculates SHA1 from the given string and returns its hex representation.
+    ///
+    /// ```swift
+    /// print("http://test.com".sha1)
+    /// // prints "50334ee0b51600df6397ce93ceed4728c37fee4e"
+    /// ```
+    var sha1: String? {
+        guard !isEmpty, let input = self.data(using: .utf8) else {
+            return nil
         }
 
-        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .gray)
-        addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        activityIndicator.center = self.center
+        let hash = input.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) -> [UInt8] in
+            var hash = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
+            CC_SHA1(bytes.baseAddress, CC_LONG(input.count), &hash)
+            return hash
+        }
 
-        // if not, download image from url
-        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-            if error != nil {
-                print(error!)
-                return
-            }
-
-            DispatchQueue.main.async {
-                if let image = UIImage(data: data!) {
-                    imageCache.setObject(image, forKey: urlString as NSString)
-                    self.image = image
-                    activityIndicator.removeFromSuperview()
-                }
-            }
-
-        }).resume()
+        return hash.map({ String(format: "%02x", $0) }).joined()
     }
 }
