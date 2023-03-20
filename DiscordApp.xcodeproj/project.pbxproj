@@ -10,6 +10,9 @@
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
 		5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C629C8BFE700AB91A8 /* DataCache.swift */; };
 		5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */; };
+		5A8C86CC29C8D20900AB91A8 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CB29C8D20900AB91A8 /* Attachment.swift */; };
+		5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */; };
+		5A8C86D029C8DFE700AB91A8 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CF29C8DFE700AB91A8 /* DividerView.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -17,12 +20,12 @@
 		5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087C329C78C6800A01A58 /* DiscordApi.swift */; };
 		5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CA29C7AA6E00A01A58 /* Guild.swift */; };
 		5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CC29C7AA8400A01A58 /* Channel.swift */; };
-		5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* Author.swift */; };
+		5AC087CF29C7AA9500A01A58 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* User.swift */; };
 		5AC087D129C7AAA800A01A58 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D029C7AAA800A01A58 /* Message.swift */; };
 		5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D229C85B7A00A01A58 /* Extensions.swift */; };
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
-		5AC087DB29C8828A00A01A58 /* GuildImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DA29C8828A00A01A58 /* GuildImageView.swift */; };
+		5AC087DB29C8828A00A01A58 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
 		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
 		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
@@ -32,6 +35,9 @@
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		5A8C86CB29C8D20900AB91A8 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
+		5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewCell.swift; sourceTree = "<group>"; };
+		5A8C86CF29C8DFE700AB91A8 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +47,12 @@
 		5AC087C329C78C6800A01A58 /* DiscordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordApi.swift; sourceTree = "<group>"; };
 		5AC087CA29C7AA6E00A01A58 /* Guild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
 		5AC087CC29C7AA8400A01A58 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		5AC087CE29C7AA9500A01A58 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		5AC087CE29C7AA9500A01A58 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AC087D029C7AAA800A01A58 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5AC087D229C85B7A00A01A58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5AC087DA29C8828A00A01A58 /* GuildImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildImageView.swift; sourceTree = "<group>"; };
+		5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
 		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,9 +81,9 @@
 		5A8C86CA29C8C2F900AB91A8 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				5AC087DA29C8828A00A01A58 /* GuildImageView.swift */,
 				5AC087DC29C882B600A01A58 /* GuildViewCell.swift */,
 				5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */,
+				5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -130,8 +136,9 @@
 			children = (
 				5AC087CA29C7AA6E00A01A58 /* Guild.swift */,
 				5AC087CC29C7AA8400A01A58 /* Channel.swift */,
-				5AC087CE29C7AA9500A01A58 /* Author.swift */,
+				5AC087CE29C7AA9500A01A58 /* User.swift */,
 				5AC087D029C7AAA800A01A58 /* Message.swift */,
+				5A8C86CB29C8D20900AB91A8 /* Attachment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 		F9D055EB29C8C70900C55037 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				5A8C86CF29C8DFE700AB91A8 /* DividerView.swift */,
+				5AC087DA29C8828A00A01A58 /* AvatarImageView.swift */,
 				F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */,
 			);
 			path = Subviews;
@@ -237,10 +246,13 @@
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
 				5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */,
+				5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */,
+				5A8C86CC29C8D20900AB91A8 /* Attachment.swift in Sources */,
 				5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */,
-				5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */,
+				5AC087CF29C7AA9500A01A58 /* User.swift in Sources */,
 				5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */,
-				5AC087DB29C8828A00A01A58 /* GuildImageView.swift in Sources */,
+				5AC087DB29C8828A00A01A58 /* AvatarImageView.swift in Sources */,
+				5A8C86D029C8DFE700AB91A8 /* DividerView.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* Message.swift in Sources */,
@@ -407,7 +419,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -438,7 +450,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

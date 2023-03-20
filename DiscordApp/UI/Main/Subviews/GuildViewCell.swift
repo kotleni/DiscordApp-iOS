@@ -8,8 +8,8 @@
 import UIKit
 
 class GuildViewCell: UICollectionViewCell {
-    private let imageView: RoundedImageView = {
-        let view = RoundedImageView()
+    private let imageView: AvatarImageView = {
+        let view = AvatarImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
