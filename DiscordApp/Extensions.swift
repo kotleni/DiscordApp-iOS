@@ -8,6 +8,13 @@
 import UIKit
 import CommonCrypto
 
+extension NSObject {
+    
+    class var nameOfClass: String {
+        NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+}
+
 extension Error {
     func presetErrorAlert(viewController: UIViewController) {
         let alert = UIAlertController(title: "Error", message: self.localizedDescription, preferredStyle: .alert)

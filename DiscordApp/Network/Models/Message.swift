@@ -12,5 +12,6 @@ class Message: Decodable {
     let type: Int
     let content: String
     let channel_id: String
+    let timestamp: String
     let author: Author
 }
