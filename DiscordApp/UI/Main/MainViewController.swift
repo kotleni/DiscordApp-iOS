@@ -30,6 +30,8 @@ final class MainViewController: UIViewController {
         view.dataSource = self
         return view
     }()
+    private let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
     
     private var guilds: [Guild] = []
     private var channels: [Channel] = []
@@ -57,6 +59,7 @@ final class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setLoading(isLoading: true)
         DiscordApi.shared.getGuilds { [weak self] result in
             switch result {
             case .failure(let err):
@@ -68,11 +71,30 @@ final class MainViewController: UIViewController {
                     return isOwner // owned first
                 })
                 self?.guildsCollectionView.reloadData()
+                
+                self?.setLoading(isLoading: false)
             }
         }
     }
     
+    private func setLoading(isLoading: Bool) {
+        switch isLoading {
+        case true:
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            //loadingIndicator.hidesWhenStopped = true
+            loadingIndicator.style = .medium
+            loadingIndicator.startAnimating()
+
+            loadingAlert.view.addSubview(loadingIndicator)
+            present(loadingAlert, animated: true)
+        case false:
+            loadingAlert.dismiss(animated: true)
+        }
+    }
+    
     private func loadChannelsFor(guildId: String) {
+        setLoading(isLoading: true)
+        
         DiscordApi.shared.getChannels(guildId: guildId) { [weak self] result in
             switch result {
             case .failure(let err):
@@ -91,6 +113,8 @@ final class MainViewController: UIViewController {
                 // Try find guild index by id
                 self?.currentGuildIndex = self?.guilds.firstIndex(where: { $0.id == guildId })
             }
+            
+            self?.setLoading(isLoading: false)
         }
     }
     
