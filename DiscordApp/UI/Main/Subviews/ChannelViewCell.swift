@@ -11,7 +11,7 @@ class ChannelViewCell: UICollectionViewCell {
     private let nameLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .boldSystemFont(ofSize: 18)
+        view.font = .systemFont(ofSize: 18)
         return view
     }()
     
@@ -29,7 +29,7 @@ class ChannelViewCell: UICollectionViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(dividerView)
         
-        let padding = 8.0
+        let padding = 16.0
         NSLayoutConstraint.activate([
             nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -padding),
