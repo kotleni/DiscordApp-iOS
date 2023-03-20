@@ -27,9 +27,15 @@ final class MessagesViewController: UITableViewController {
         let radians = Double.pi / 180.0 * 180.0
         view.transform = CGAffineTransform(rotationAngle: radians)
         
-        DiscordApi.shared.getMessages(channelId: channelId) { messages in
-            self.messages = messages
-            self.tableView.reloadData()
+        DiscordApi.shared.getMessages(channelId: channelId) { [weak self] result in
+            switch result {
+            case .failure(let err):
+                guard let self = self else { return }
+                err.presetErrorAlert(viewController: self)
+            case .success(let messages):
+                self?.messages = messages
+                self?.tableView.reloadData()
+            }
         }
     }
     

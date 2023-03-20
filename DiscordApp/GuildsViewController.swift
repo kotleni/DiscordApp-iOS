@@ -18,9 +18,15 @@ final class GuildsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        DiscordApi.shared.getGuilds { guilds in
-            self.guilds = guilds
-            self.tableView.reloadData()
+        DiscordApi.shared.getGuilds { [weak self] result in
+            switch result {
+            case .failure(let err):
+                guard let self = self else { return }
+                err.presetErrorAlert(viewController: self)
+            case .success(let guilds):
+                self?.guilds = guilds
+                self?.tableView.reloadData()
+            }
         }
     }
     

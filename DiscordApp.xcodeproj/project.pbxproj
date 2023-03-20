@@ -20,6 +20,8 @@
 		5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CC29C7AA8400A01A58 /* Channel.swift */; };
 		5AC087CF29C7AA9500A01A58 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* Author.swift */; };
 		5AC087D129C7AAA800A01A58 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D029C7AAA800A01A58 /* Message.swift */; };
+		5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D229C85B7A00A01A58 /* Extensions.swift */; };
+		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5AC087CC29C7AA8400A01A58 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5AC087CE29C7AA9500A01A58 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		5AC087D029C7AAA800A01A58 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5AC087D229C85B7A00A01A58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				5AC087B729C7869200A01A58 /* Assets.xcassets */,
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
 				5AC087BC29C7869200A01A58 /* Info.plist */,
+				5AC087D229C85B7A00A01A58 /* Extensions.swift */,
+				5AC087D429C8656000A01A58 /* Logger.swift */,
 			);
 			path = DiscordApp;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 				5AC087C629C7A0DF00A01A58 /* ChannelsViewController.swift in Sources */,
 				5AC087B329C7869000A01A58 /* GuildsViewController.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
+				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* Message.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
+				5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */,
 				5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

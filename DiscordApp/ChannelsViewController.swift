@@ -24,9 +24,15 @@ final class ChannelsViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        DiscordApi.shared.getChannels(guildId: guildId) { channels in
-            self.channels = channels
-            self.tableView.reloadData()
+        DiscordApi.shared.getChannels(guildId: guildId) { [weak self] result in
+            switch result {
+            case .failure(let err):
+                guard let self = self else { return }
+                err.presetErrorAlert(viewController: self)
+            case .success(let channels):
+                self?.channels = channels
+                self?.tableView.reloadData()
+            }
         }
     }
     
