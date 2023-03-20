@@ -8,7 +8,7 @@
 import Foundation
 
 // ref: https://discord.com/developers/docs/resources/user#user-object
-struct User: Decodable { // TODO: Rename to User
+struct User: Decodable {
     let id: String            // unique ID
     let username: String      // username, not unique
     let discriminator: String // 4-digit discord-tag
