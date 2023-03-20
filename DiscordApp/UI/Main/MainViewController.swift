@@ -33,6 +33,7 @@ final class MainViewController: UIViewController {
     
     private var guilds: [Guild] = []
     private var channels: [Channel] = []
+    private var currentGuildIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +70,10 @@ final class MainViewController: UIViewController {
                 self?.guildsCollectionView.reloadData()
             }
         }
-        
-        DiscordApi.shared.getChannels(guildId: "1013883033486639184") { [weak self] result in
+    }
+    
+    private func loadChannelsFor(guildId: String) {
+        DiscordApi.shared.getChannels(guildId: guildId) { [weak self] result in
             switch result {
             case .failure(let err):
                 guard let self = self else { return }
@@ -84,6 +87,9 @@ final class MainViewController: UIViewController {
                     return firstPos > secondPos
                 })
                 self?.channelsCollectionView.reloadData()
+                
+                // Try find guild index by id
+                self?.currentGuildIndex = self?.guilds.firstIndex(where: { $0.id == guildId })
             }
         }
     }
@@ -172,8 +178,13 @@ extension MainViewController: UICollectionViewDelegate {
         case guildsCollectionView:
             let cell = collectionView.cellForItem(at: indexPath) as! GuildViewCell
             cell.select()
+            
+            let guildId = guilds[indexPath.row].id
+            loadChannelsFor(guildId: guildId)
         case channelsCollectionView:
-            print("channelsCollectionView selected")
+            guard let currentGuildIndex = currentGuildIndex else { return }
+            let guild = guilds[currentGuildIndex]
+            let channel = channels[indexPath.row]
         default:
             fatalError("Wrong collection view")
         }
