@@ -56,21 +56,21 @@ final class MessagesViewController: UIViewController {
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
     }
     
     @objc private func updateChat() {
-        getMessages()
+        fetchMessages()
     }
     
     private func startWatchdog() {
         Timer.scheduledTimer(timeInterval: watchdogTimerDelay, target: self, selector: #selector(updateChat), userInfo: nil, repeats: true)
     }
     
-    private func getMessages() {
+    private func fetchMessages() {
         guard let channelId = channel?.id else { return }
         DiscordApi.shared.getMessages(channelId: channelId) { result in
             switch result {
