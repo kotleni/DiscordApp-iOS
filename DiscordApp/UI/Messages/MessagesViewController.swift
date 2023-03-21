@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: UIViewController
 final class MessagesViewController: UIViewController {
+    
     private lazy var tableView: UITableView = {
         let padding = 10.0
         let view = UITableView(frame: .zero, style: .plain)
@@ -20,6 +21,26 @@ final class MessagesViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         return view
+    }()
+    
+    private let messageTextField: UITextField = {
+        let textField = UITextField()
+        textField.layer.cornerRadius = 10
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = UIColor(named: "TextFieldBackground")
+        textField.placeholder = "Message"
+        
+        return textField
+    }()
+    
+    private lazy var messageSendButton: CircularButton = {
+        let button = CircularButton(type: .system)
+        button.backgroundColor = UIColor(named: "ButtonColor")
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(sendMessage(sender:)), for: .touchUpInside)
+        return button
     }()
     
     private var channel: DiscordChannel?
@@ -35,12 +56,14 @@ final class MessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
         view.backgroundColor = UIColor(named: "Plane")
         tableView.backgroundColor = .clear
         title = channel?.name ?? "Text channel"
         edgesForExtendedLayout = .all
         
-        [tableView].forEach {
+        [tableView, messageTextField, messageSendButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -53,12 +76,38 @@ final class MessagesViewController: UIViewController {
         startWatchdog()
     }
     
+    @objc private func sendMessage(sender: CircularButton) {
+        DiscordClient.sendMessage(channelId: channel!.id, text: messageTextField.text ?? "") { [self] in
+            messageTextField.text = ""
+        }
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
     private func setUpConstraints() {
+        let messageTFHeigh = 50.0
+        let padding = 10.0
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            messageTextField.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            messageTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            messageTextField.trailingAnchor.constraint(equalTo: messageSendButton.leadingAnchor, constant: -padding),
+            messageTextField.heightAnchor.constraint(equalToConstant: messageTFHeigh),
+            messageSendButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            messageSendButton.heightAnchor.constraint(equalTo: messageTextField.heightAnchor),
+            messageSendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
+            messageSendButton.widthAnchor.constraint(equalTo: messageSendButton.heightAnchor)
         ])
     }
     
@@ -90,7 +139,7 @@ final class MessagesViewController: UIViewController {
 // MARK: UITableViewDataSource
 extension MessagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

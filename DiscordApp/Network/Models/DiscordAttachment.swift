@@ -8,7 +8,7 @@
 import Foundation
 
 // ref: https://discord.com/developers/docs/resources/channel#attachment-object
-struct DiscordAttachment: Decodable {
+struct DiscordAttachment: Codable {
     let id: String              // unique ID
     let filename: String        // name of file attached
     let description: String?    // description for the file (max 1024 characters)

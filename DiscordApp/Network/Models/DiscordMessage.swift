@@ -9,7 +9,8 @@ import Foundation
 
 // ref: https://discord.com/developers/docs/resources/channel#message-object
 // types: https://discord.com/developers/docs/resources/channel#message-object-message-types
-class DiscordMessage: Decodable, Equatable {
+class DiscordMessage: Codable, Equatable {
+    
     let id: String                              // ID, unique for channel
     let channel_id: String                      // ID of channel
     let author: DiscordUser                            // author of this message (not guaranteed a valid user, see below)
@@ -45,3 +46,4 @@ class DiscordMessage: Decodable, Equatable {
         lhs.id == rhs.id
     }
 }
+

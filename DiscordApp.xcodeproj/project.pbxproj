@@ -39,6 +39,7 @@
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
 		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
 		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
+		F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055EC29CA20EF00C55037 /* CircularButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
 		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		F9D055EC29CA20EF00C55037 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */,
+				F9D055EC29CA20EF00C55037 /* CircularButton.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
 				5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
+				F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */,
 				5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
