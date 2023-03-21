@@ -56,10 +56,6 @@ final class MainViewController: UIViewController {
             channelsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             channelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         if !TokenService.isValidToken {
             modalPresentationStyle = .popover
