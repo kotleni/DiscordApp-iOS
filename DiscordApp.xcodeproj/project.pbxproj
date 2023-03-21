@@ -14,6 +14,13 @@
 		5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */; };
 		5A8C86D729C90F0300AB91A8 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86D529C90F0300AB91A8 /* DividerView.swift */; };
 		5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86D629C90F0300AB91A8 /* AvatarImageView.swift */; };
+		5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697929C9B4A700FA76B6 /* String.swift */; };
+		5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697B29C9B4BF00FA76B6 /* NSObject.swift */; };
+		5AA6697E29C9B4D800FA76B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697D29C9B4D800FA76B6 /* UIViewController.swift */; };
+		5AA6698029C9B53900FA76B6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697F29C9B53900FA76B6 /* Error.swift */; };
+		5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698129C9B54700FA76B6 /* URLResponse.swift */; };
+		5AA6698429C9B55700FA76B6 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698329C9B55700FA76B6 /* NSLock.swift */; };
+		5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698529C9B56C00FA76B6 /* Staging.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -23,7 +30,6 @@
 		5AC087CD29C7AA8400A01A58 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CC29C7AA8400A01A58 /* Channel.swift */; };
 		5AC087CF29C7AA9500A01A58 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087CE29C7AA9500A01A58 /* User.swift */; };
 		5AC087D129C7AAA800A01A58 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D029C7AAA800A01A58 /* Message.swift */; };
-		5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D229C85B7A00A01A58 /* Extensions.swift */; };
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
@@ -39,6 +45,13 @@
 		5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewCell.swift; sourceTree = "<group>"; };
 		5A8C86D529C90F0300AB91A8 /* DividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		5A8C86D629C90F0300AB91A8 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		5AA6697929C9B4A700FA76B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5AA6697B29C9B4BF00FA76B6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		5AA6697D29C9B4D800FA76B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5AA6697F29C9B53900FA76B6 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		5AA6698129C9B54700FA76B6 /* URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
+		5AA6698329C9B55700FA76B6 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		5AA6698529C9B56C00FA76B6 /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +63,6 @@
 		5AC087CC29C7AA8400A01A58 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5AC087CE29C7AA9500A01A58 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AC087D029C7AAA800A01A58 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		5AC087D229C85B7A00A01A58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +109,19 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		5AA6697829C9B49500FA76B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6697929C9B4A700FA76B6 /* String.swift */,
+				5AA6697B29C9B4BF00FA76B6 /* NSObject.swift */,
+				5AA6697D29C9B4D800FA76B6 /* UIViewController.swift */,
+				5AA6697F29C9B53900FA76B6 /* Error.swift */,
+				5AA6698129C9B54700FA76B6 /* URLResponse.swift */,
+				5AA6698329C9B55700FA76B6 /* NSLock.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5AC087A229C7869000A01A58 = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +143,9 @@
 			children = (
 				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087D629C868A800A01A58 /* UI */,
+				5AA6697829C9B49500FA76B6 /* Extensions */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
-				5AC087D229C85B7A00A01A58 /* Extensions.swift */,
 				5AC087D429C8656000A01A58 /* Logger.swift */,
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
 				5AC087B729C7869200A01A58 /* Assets.xcassets */,
@@ -136,6 +161,7 @@
 				5AC087C329C78C6800A01A58 /* DiscordApi.swift */,
 				5A8C86C629C8BFE700AB91A8 /* DataCache.swift */,
 				5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */,
+				5AA6698529C9B56C00FA76B6 /* Staging.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -250,10 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
+				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
 				5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* Guild.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
+				5AA6697E29C9B4D800FA76B6 /* UIViewController.swift in Sources */,
+				5AA6698429C9B55700FA76B6 /* NSLock.swift in Sources */,
 				5A8C86D729C90F0300AB91A8 /* DividerView.swift in Sources */,
 				5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */,
 				5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */,
@@ -263,10 +292,13 @@
 				5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordApi.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
+				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* Message.swift in Sources */,
+				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
-				5AC087D329C85B7A00A01A58 /* Extensions.swift in Sources */,
+				5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */,
+				5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */,
 				F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */,
 				5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */,
 			);
