@@ -12,7 +12,6 @@ final class MainViewController: UIViewController {
     private lazy var guildsCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createGuildCollectionLayout())
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "Bar")
         view.register(GuildViewCell.self, forCellWithReuseIdentifier: "guild")
         view.delegate = self
@@ -23,7 +22,6 @@ final class MainViewController: UIViewController {
     private lazy var channelsCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createChannelCollectionLayout())
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         view.register(ChannelViewCell.self, forCellWithReuseIdentifier: "channel")
         view.delegate = self
@@ -41,8 +39,10 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "Background")
-        view.addSubview(guildsCollectionView)
-        view.addSubview(channelsCollectionView)
+        [guildsCollectionView, channelsCollectionView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
         
         NSLayoutConstraint.activate([
             guildsCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -205,8 +205,6 @@ extension MainViewController: UICollectionViewDelegate {
             let guildId = guilds[indexPath.row].id
             loadChannelsFor(guildId: guildId)
         case channelsCollectionView:
-            //guard let currentGuildIndex = currentGuildIndex else { return }
-            //let guild = guilds[currentGuildIndex]
             let channel = channels[indexPath.row]
             navigationController?.pushViewController(MessagesViewController(channel: channel), animated: true)
         default:
