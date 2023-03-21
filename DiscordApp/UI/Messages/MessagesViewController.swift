@@ -22,13 +22,13 @@ final class MessagesViewController: UIViewController {
         return view
     }()
     
-    private var channel: Channel?
+    private var channel: DiscordChannel?
     private let rotationAngle = Double.pi     // 180˚ in radians
     private let watchdogTimerDelay = 1.5      // in secs
     
-    private var messages: [Message] = []
+    private var messages: [DiscordMessage] = []
     
-    convenience init(channel: Channel) {
+    convenience init(channel: DiscordChannel) {
         self.init()
         self.channel = channel
     }
@@ -72,7 +72,7 @@ final class MessagesViewController: UIViewController {
     
     private func fetchMessages() {
         guard let channelId = channel?.id else { return }
-        DiscordApi.shared.getMessages(channelId: channelId) { result in
+        DiscordClient.getMessages(channelId: channelId) { result in
             switch result {
             case .success(let messages):
                 if messages.last != self.messages.last {

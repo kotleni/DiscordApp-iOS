@@ -8,7 +8,7 @@
 import Foundation
 
 // ref: https://discord.com/developers/docs/resources/guild#guild-object
-struct Guild: Decodable {
+struct DiscordGuild: Decodable {
     let id: String                  // unique ID
     let name: String                // guild name (2-100 characters, excluding trailing and leading whitespace)
     let icon: String?               // icon hash

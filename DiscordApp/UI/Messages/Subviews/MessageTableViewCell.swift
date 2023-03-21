@@ -106,7 +106,7 @@ final class MessageTableViewCell: UITableViewCell {
         return dateFormatter.string(from: date)
     }
     
-    func setMessage(_ message: Message) {
+    func setMessage(_ message: DiscordMessage) {
         nameLabel.text = message.author.username
         messageLabel.text = message.content
         timestampLabel.text = getDate(message.timestamp)

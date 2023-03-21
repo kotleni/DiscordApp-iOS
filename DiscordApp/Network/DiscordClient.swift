@@ -69,17 +69,15 @@ extension NetworkingError: LocalizedError {
     }
 }
 
-final class DiscordApi {
-    static let shared = DiscordApi()
+final class DiscordClient {
+    private static let baseURL = "https://discord.com/api/v9"
+    private static let token = "NDIwMTQ5ODY5NjAxMzU3ODI0.GcWC5s.8nEQeCww4xmCHXF-bX19Soq94p0Kyc4yNZuX9Y"
     
-    private let baseURL = "https://discord.com/api/v9"
-    private let token = "NDIwMTQ5ODY5NjAxMzU3ODI0.GcWC5s.8nEQeCww4xmCHXF-bX19Soq94p0Kyc4yNZuX9Y"
-    
-    private func buildUrl(url: String) -> URL? {
+    private static func buildUrl(url: String) -> URL? {
         return URL(string: "\(baseURL)/\(url)")
     }
     
-    private func buildURLRequest(url: String) -> URLRequest? {
+    private static func buildURLRequest(url: String) -> URLRequest? {
         guard let url = buildUrl(url: url) else { return nil }
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -87,7 +85,7 @@ final class DiscordApi {
         return request
     }
     
-    private func parseResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?) -> Result<T, NetworkingError>? {
+    private static func parseResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?) -> Result<T, NetworkingError>? {
         // Общие ошибки
         if let error = error, let urlError = error as? URLError {
             if urlError.code == URLError.cancelled {
@@ -126,7 +124,7 @@ final class DiscordApi {
         }
     }
     
-    private func makeRequest<T: Decodable>(url: String, completion: @escaping (Result<T, NetworkingError>) -> Void) {
+    private static func makeRequest<T: Decodable>(url: String, completion: @escaping (Result<T, NetworkingError>) -> Void) {
         guard let request = buildURLRequest(url: url) else { return }
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let result: Result<T, NetworkingError> = self.parseResponse(data: data, response: response, error: error)
@@ -136,17 +134,17 @@ final class DiscordApi {
     }
     
     /// Get guilds from account
-    func getGuilds(completion: @escaping (Result<[Guild], NetworkingError>) -> Void) -> Void {
+    static func getGuilds(completion: @escaping (Result<[DiscordGuild], NetworkingError>) -> Void) -> Void {
         makeRequest(url: "/users/@me/guilds", completion: completion)
     }
     
     /// Get channels from guild
-    func getChannels(guildId: String, completion: @escaping (Result<[Channel], NetworkingError>) -> Void) {
+    static func getChannels(guildId: String, completion: @escaping (Result<[DiscordChannel], NetworkingError>) -> Void) {
         makeRequest(url: "/guilds/\(guildId)/channels", completion: completion)
     }
     
     /// Get messages from channel
-    func getMessages(channelId: String, completion: @escaping (Result<[Message], NetworkingError>) -> Void) {
+    static func getMessages(channelId: String, completion: @escaping (Result<[DiscordMessage], NetworkingError>) -> Void) {
         makeRequest(url: "/channels/\(channelId)/messages", completion: completion)
     }
 }

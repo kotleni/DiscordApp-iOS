@@ -30,8 +30,8 @@ final class MainViewController: UIViewController {
     }()
     private let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     
-    private var guilds: [Guild] = []
-    private var channels: [Channel] = []
+    private var guilds: [DiscordGuild] = []
+    private var channels: [DiscordChannel] = []
     private var currentGuildIndex: Int?
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setLoading(isLoading: true)
-        DiscordApi.shared.getGuilds { [weak self] result in
+        DiscordClient.getGuilds { [weak self] result in
             switch result {
             case .failure(let err):
                 guard let self = self else { return }
@@ -93,7 +93,7 @@ final class MainViewController: UIViewController {
     private func loadChannelsFor(guildId: String) {
         setLoading(isLoading: true)
         
-        DiscordApi.shared.getChannels(guildId: guildId) { [weak self] result in
+        DiscordClient.getChannels(guildId: guildId) { [weak self] result in
             switch result {
             case .failure(let err):
                 guard let self = self else { return }
