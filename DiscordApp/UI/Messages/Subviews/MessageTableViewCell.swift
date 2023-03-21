@@ -93,21 +93,17 @@ final class MessageTableViewCell: UITableViewCell {
     
     private func getDate(_ isoDate: String) -> String {
         let isoDateFormatter = ISO8601DateFormatter()
-        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         isoDateFormatter.formatOptions = [
             .withFullDate,
             .withFullTime,
             .withDashSeparatorInDate,
-            .withFractionalSeconds]
-        guard let realDate = isoDateFormatter.date(from: isoDate) else { return "error" }
-        let calendar = NSCalendar.current
-        let components = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: realDate)
-        guard let day = components.day, let month = components.month, let year = components.year, let hour = components.hour, let minute = components.minute else { return "error" }
-        let dayString: String = (day < 10) ? "0\(day)" : String(day)
-        let monthString: String = (month < 10) ? "0\(month)" : String(month)
-        let hourString: String = (hour < 10) ? "0\(hour)" : String(hour)
-        let minuteString: String = (minute < 10) ? "0\(minute)" : String(minute)
-        return "\(dayString).\(monthString).\(year) \(hourString):\(minuteString)"
+            .withFractionalSeconds
+        ]
+        guard let date = isoDateFormatter.date(from: isoDate) else { return "nil" }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm dd.MM.yyyy"
+        return dateFormatter.string(from: date)
     }
     
     func setMessage(_ message: Message) {
