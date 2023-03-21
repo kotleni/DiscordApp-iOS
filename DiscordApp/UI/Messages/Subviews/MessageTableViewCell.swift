@@ -42,6 +42,9 @@ final class MessageTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setGUISettings()
         setupConstraints()
+        
+        transform = CGAffineTransform(rotationAngle: Double.pi)
+        backgroundColor = .clear
     }
     
     required init?(coder aDecoder: NSCoder) {
