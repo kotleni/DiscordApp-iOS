@@ -29,7 +29,6 @@ final class MainViewController: UIViewController {
         return view
     }()
     private let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
     
     private var guilds: [Guild] = []
     private var channels: [Channel] = []
