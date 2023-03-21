@@ -81,7 +81,6 @@ final class MainViewController: UIViewController {
         switch isLoading {
         case true:
             let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-            //loadingIndicator.hidesWhenStopped = true
             loadingIndicator.style = .medium
             loadingIndicator.startAnimating()
 
