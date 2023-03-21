@@ -22,6 +22,7 @@ final class MessagesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "Background")
         configureVC()
         configureTableView()
     }
@@ -39,6 +40,7 @@ final class MessagesViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.nameOfClass, for: indexPath) as? MessageTableViewCell else { return UITableViewCell() }
         cell.transform = CGAffineTransform(rotationAngle: rotationAngle)
         cell.setMessage(messages[indexPath.row])
+        cell.backgroundColor = .clear
         return cell
     }
     

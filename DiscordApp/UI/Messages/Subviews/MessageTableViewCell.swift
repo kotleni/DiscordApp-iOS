@@ -33,7 +33,7 @@ final class MessageTableViewCell: UITableViewCell {
     
     private lazy var avatarImageView: AvatarImageView = {
         let avatarImageView = AvatarImageView()
-        avatarImageView.backgroundColor = .green
+        avatarImageView.backgroundColor = .white
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
     }()
