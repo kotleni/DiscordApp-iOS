@@ -7,17 +7,50 @@
 
 import UIKit
 
+/// ImageView for avatar, can generate single char image
 class AvatarImageView: UIImageView {
-    public var isPrepareForReuseEnabled = true
+    private lazy var charLabel: UILabel = {
+        let view = UILabel()
+        view.backgroundColor = UIColor(named: "Discord")
+        view.textColor = .white
+        view.font = .boldSystemFont(ofSize: 22)
+        view.textAlignment = .center
+        return view
+    }()
+    
     private let imageLoader = ImageLoader()
+    private var isSingleCharMode: Bool = false
+    
+    var isPrepareForReuseEnabled = true
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = min(bounds.width, bounds.height) / 2
         layer.masksToBounds = true
+        
+        if isSingleCharMode {
+            charLabel.frame = bounds
+        }
     }
     
-    func loadImage(
+    private func prepareForReuse() {
+        layer.removeAllAnimations()
+        image = nil
+        disbleSingleCharMode()
+    }
+    
+    private func setSingleChar(char: Character) {
+        isSingleCharMode = true
+        charLabel.text = "\(char)"
+        addSubview(charLabel)
+    }
+    
+    private func disbleSingleCharMode() {
+        isSingleCharMode = false
+        charLabel.removeFromSuperview()
+    }
+    
+    private func loadImage(
         _ path: String,
         withRenderMode mode: UIImage.RenderingMode? = nil,
         completion: ((Bool) -> Void)? = nil
@@ -29,18 +62,20 @@ class AvatarImageView: UIImageView {
             case .success(let image):
                 self.image = image.withRenderingMode(mode ?? .automatic)
                 completion?(true)
+                self.disbleSingleCharMode()
             case .failure:
                 completion?(false)
             }
         }
     }
     
-    func cancelLoading() {
+    private func cancelLoading() {
         imageLoader.cancel()
     }
     
-    private func prepareForReuse() {
-        layer.removeAllAnimations()
-        image = nil
+    func bindData(name: String, url: String?) {
+        setSingleChar(char: name.first ?? "-")
+        guard let url = url else { return }
+        loadImage(url)
     }
 }

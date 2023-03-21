@@ -184,8 +184,9 @@ extension MainViewController: UICollectionViewDataSource {
         case guildsCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "guild", for: indexPath) as! GuildViewCell
             let guild = guilds[indexPath.row]
-            guard let url = guild.getIconUrl() else { return cell }
-            cell.configure(url: url)
+            let name = guild.name
+            let url = guild.getIconUrl()
+            cell.configure(name: name, url: url)
             return cell
         case channelsCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "channel", for: indexPath) as! ChannelViewCell

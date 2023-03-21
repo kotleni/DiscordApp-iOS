@@ -53,8 +53,8 @@ class GuildViewCell: UICollectionViewCell {
         imageView.image = nil
     }
     
-    func configure(url: String) {
-        imageView.loadImage(url)
+    func configure(name: String, url: String?) {
+        imageView.bindData(name: name, url: url)
     }
     
     func select() {

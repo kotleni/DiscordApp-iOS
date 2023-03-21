@@ -80,15 +80,9 @@ final class MessageTableViewCell: UITableViewCell {
         ])
     }
     
-    private func setImage(by url: String?) {
-        // TODO: do normal single char avatar generator
-        let defaultAvatartLink = "https://cdn3.iconfinder.com/data/icons/popular-services-brands-vol-2/512/discord-512.png"
-        
-        if let url = url {
-            avatarImageView.loadImage(url)
-        } else {
-            avatarImageView.loadImage(defaultAvatartLink)
-        }
+    private func setImage(by user: DiscordUser?) {
+        guard let user = user else { return }
+        avatarImageView.bindData(name: user.username, url: user.getAvatarUrl())
     }
     
     private func getDate(_ isoDate: String) -> String {
@@ -110,6 +104,6 @@ final class MessageTableViewCell: UITableViewCell {
         nameLabel.text = message.author.username
         messageLabel.text = message.content
         timestampLabel.text = getDate(message.timestamp)
-        setImage(by: message.author.getAvatarUrl())
+        setImage(by: message.author)
     }
 }
