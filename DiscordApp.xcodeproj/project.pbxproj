@@ -21,6 +21,7 @@
 		5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698129C9B54700FA76B6 /* URLResponse.swift */; };
 		5AA6698429C9B55700FA76B6 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698329C9B55700FA76B6 /* NSLock.swift */; };
 		5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698529C9B56C00FA76B6 /* Staging.swift */; };
+		5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698729C9B67300FA76B6 /* NetworkingError.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		5AA6698129C9B54700FA76B6 /* URLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
 		5AA6698329C9B55700FA76B6 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		5AA6698529C9B56C00FA76B6 /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
+		5AA6698729C9B67300FA76B6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				5A8C86C629C8BFE700AB91A8 /* DataCache.swift */,
 				5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */,
 				5AA6698529C9B56C00FA76B6 /* Staging.swift */,
+				5AA6698729C9B67300FA76B6 /* NetworkingError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
 				5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
+				5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
 				5AA6697E29C9B4D800FA76B6 /* UIViewController.swift in Sources */,
