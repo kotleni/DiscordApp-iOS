@@ -35,7 +35,7 @@ final class MessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "Background")
+        view.backgroundColor = UIColor(named: "Plane")
         tableView.backgroundColor = .clear
         title = channel?.name ?? "Text channel"
         edgesForExtendedLayout = .all

@@ -12,7 +12,7 @@ final class MainViewController: UIViewController {
     private lazy var guildsCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createGuildCollectionLayout())
         
-        view.backgroundColor = UIColor(named: "Bar")
+        view.backgroundColor = .clear
         view.register(GuildViewCell.self, forCellWithReuseIdentifier: "guild")
         view.delegate = self
         view.dataSource = self
@@ -22,7 +22,9 @@ final class MainViewController: UIViewController {
     private lazy var channelsCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createChannelCollectionLayout())
         
-        view.backgroundColor = .clear
+        view.backgroundColor = UIColor(named: "Plane")
+        view.layer.cornerRadius = 8.0
+        view.layer.masksToBounds = true
         view.register(ChannelViewCell.self, forCellWithReuseIdentifier: "channel")
         view.delegate = self
         view.dataSource = self
@@ -46,13 +48,13 @@ final class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             guildsCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             guildsCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            guildsCollectionView.widthAnchor.constraint(equalToConstant: 90),
+            guildsCollectionView.widthAnchor.constraint(equalToConstant: 70),
             guildsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             channelsCollectionView.leftAnchor.constraint(equalTo: guildsCollectionView.rightAnchor),
-            channelsCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            channelsCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8),
             channelsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            channelsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            channelsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -151,7 +153,7 @@ final class MainViewController: UIViewController {
         UICollectionViewCompositionalLayout(sectionProvider: { _, _ in
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(70))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(40))
             let group: NSCollectionLayoutGroup
             if #available(iOS 16.0, *) {
                 group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)

@@ -37,7 +37,7 @@ class GuildViewCell: UICollectionViewCell {
             
             selectorView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             selectorView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: -4),
-            selectorView.widthAnchor.constraint(equalToConstant: 10),
+            selectorView.widthAnchor.constraint(equalToConstant: 8),
             selectorView.heightAnchor.constraint(equalTo: imageView.heightAnchor, constant: -10)
         ])
         

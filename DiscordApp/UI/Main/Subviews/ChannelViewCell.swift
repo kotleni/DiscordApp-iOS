@@ -8,16 +8,16 @@
 import UIKit
 
 class ChannelViewCell: UICollectionViewCell {
-    private let nameLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 18)
+    private let iconImage: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .center
+        view.image = UIImage(systemName: "number")
         return view
     }()
     
-    private let dividerView: DividerView = {
-        let view = DividerView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+    private let nameLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 16)
         return view
     }()
     
@@ -26,20 +26,22 @@ class ChannelViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(dividerView)
+        [iconImage, nameLabel].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
         
-        let padding = 16.0
+        let padding = 8.0
         NSLayoutConstraint.activate([
-            nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding),
+            iconImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding),
+            iconImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            iconImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
+            iconImage.widthAnchor.constraint(equalTo: contentView.heightAnchor),
+            
+            nameLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: padding),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -padding),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
-            
-            dividerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: padding),
-            dividerView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            dividerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            dividerView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
     
@@ -48,6 +50,6 @@ class ChannelViewCell: UICollectionViewCell {
     }
     
     func configure(name: String) {
-        nameLabel.text = "#\(name)"
+        nameLabel.text = "\(name)"
     }
 }
