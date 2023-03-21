@@ -10,7 +10,7 @@ import UIKit
 // MARK: UIViewController
 final class MessagesViewController: UITableViewController {
     private var channel: Channel?
-    private let rotationAngle = 3.14159265359 // 180˚ in radians
+    private let rotationAngle = Double.pi     // 180˚ in radians
     private let watchdogTimerDelay = 1.5      // in secs
     
     private var messages = Array<Message>()
