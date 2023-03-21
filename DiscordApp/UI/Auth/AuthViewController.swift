@@ -8,6 +8,10 @@
 import UIKit
 import WebKit
 
+protocol AuthViewControllerDelegate: AnyObject {
+    func authViewController(didAuth: Bool, token: String)
+}
+
 final class AuthViewController: UIViewController {
     private lazy var webView: WKWebView = {
         let view = WKWebView()
@@ -18,8 +22,12 @@ final class AuthViewController: UIViewController {
     private let authLink = "https://discord.com/login"
     private let appLink = "https://discord.com/app"
     
+    weak var delegate: AuthViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
         
         view.backgroundColor = UIColor(named: "Background")
         [webView].forEach {
@@ -32,13 +40,6 @@ final class AuthViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Check is already sign in
-        // TODO: check is token not expired
-        if TokenService.isValidToken {
-            navigationController?.setViewControllers([MainViewController()], animated: true)
-            return
-        }
         
         let myURL = URL(string: authLink)
         let myRequest = URLRequest(url: myURL!)
@@ -97,7 +98,8 @@ extension AuthViewController: WKScriptMessageHandler {
             
             print("Token received: \(token)")
             TokenService.userToken = token
-            navigationController?.setViewControllers([MainViewController()], animated: true)
+            dismiss(animated: true)
+            delegate?.authViewController(didAuth: true, token: token)
         default:
             print("Invoked unknown js handler: \(message.name)")
         }

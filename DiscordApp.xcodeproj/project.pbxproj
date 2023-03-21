@@ -172,10 +172,10 @@
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
 				5AC087D429C8656000A01A58 /* Logger.swift */,
+				5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */,
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
 				5AC087B729C7869200A01A58 /* Assets.xcassets */,
 				5AC087BC29C7869200A01A58 /* Info.plist */,
-				5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */,
 			);
 			path = DiscordApp;
 			sourceTree = "<group>";

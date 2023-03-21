@@ -54,10 +54,22 @@ final class MainViewController: UIViewController {
             channelsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             channelsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !TokenService.isValidToken {
+            modalPresentationStyle = .popover
+            let authVC = AuthViewController()
+            authVC.delegate = self
+            present(authVC, animated: true)
+        } else {
+            fetchGuilds()
+        }
+    }
+    
+    private func fetchGuilds() {
         setLoading(isLoading: true)
         DiscordClient.getGuilds { [weak self] result in
             switch result {
@@ -69,9 +81,12 @@ final class MainViewController: UIViewController {
                     guard let isOwner = first.owner else { return false }
                     return isOwner // owned first
                 })
-                self?.guildsCollectionView.reloadData()
                 
-                self?.setLoading(isLoading: false)
+                // TODO: Temporary fix, loading alert can't close normally (if called now)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self?.guildsCollectionView.reloadData()
+                    self?.setLoading(isLoading: false)
+                }
             }
         }
     }
@@ -90,7 +105,7 @@ final class MainViewController: UIViewController {
         }
     }
     
-    private func loadChannelsFor(guildId: String) {
+    private func fetchChannelsFor(guildId: String) {
         setLoading(isLoading: true)
         
         DiscordClient.getChannels(guildId: guildId) { [weak self] result in
@@ -201,7 +216,7 @@ extension MainViewController: UICollectionViewDelegate {
             cell.select()
             
             let guildId = guilds[indexPath.row].id
-            loadChannelsFor(guildId: guildId)
+            fetchChannelsFor(guildId: guildId)
         case channelsCollectionView:
             let channel = channels[indexPath.row]
             navigationController?.pushViewController(MessagesViewController(channel: channel), animated: true)
@@ -217,6 +232,14 @@ extension MainViewController: UICollectionViewDelegate {
             cell.deselect()
         default:
             fatalError("Wrong collection view")
+        }
+    }
+}
+
+extension MainViewController: AuthViewControllerDelegate {
+    func authViewController(didAuth: Bool, token: String) {
+        if didAuth {
+            fetchGuilds()
         }
     }
 }
