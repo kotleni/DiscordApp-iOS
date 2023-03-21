@@ -13,7 +13,7 @@ final class MessagesViewController: UITableViewController {
     private let rotationAngle = Double.pi     // 180˚ in radians
     private let watchdogTimerDelay = 1.5      // in secs
     
-    private var messages = Array<Message>()
+    private var messages: [Message] = []
     
     convenience init(channel: Channel) {
         self.init()
