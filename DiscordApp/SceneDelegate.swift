@@ -15,9 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let navController = UINavigationController(rootViewController: MainViewController())
         window?.rootViewController = navController
-//        navController.modalPresentationStyle = .popover
-//        navController.present(MainViewController(), animated: true)
         window?.makeKeyAndVisible()
+        navController.modalPresentationStyle = .popover
+        navController.present(MainViewController(), animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) { }

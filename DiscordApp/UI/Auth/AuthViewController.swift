@@ -74,7 +74,7 @@ extension AuthViewController: WKNavigationDelegate {
         guard let url = navigationAction.request.url else { return }
         
         // Auth ok
-        if url.absoluteString == "https://discord.com/app" {
+        if url.absoluteString == appLink {
             // Magic script for fetching auth token
             let code = "var a=(webpackChunkdiscord_app['push']([[''],{},b=>{m=[];for(let d in b['c'])m['push'](b['c'][d]);}]),m)['find'](b=>b?.['exports']?.['default']?.['getToken']!==void 0x0)['exports']['default']['getToken']();window['webkit']['messageHandlers']['injectJsHandler']['postMessage']({'token':a});"
             injectJs(code: code)
