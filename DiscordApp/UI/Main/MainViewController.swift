@@ -229,6 +229,8 @@ extension MainViewController: UICollectionViewDelegate {
         case guildsCollectionView:
             let cell = collectionView.cellForItem(at: indexPath) as! GuildViewCell
             cell.deselect()
+        case channelsCollectionView:
+            break
         default:
             fatalError("Wrong collection view")
         }
