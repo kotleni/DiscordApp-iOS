@@ -8,7 +8,7 @@
 import Foundation
 
 // ref: https://discord.com/developers/docs/resources/user#user-object
-struct DiscordUser: Decodable {
+struct DiscordUser: Codable {
     let id: String            // unique ID
     let username: String      // username, not unique
     let discriminator: String // 4-digit discord-tag

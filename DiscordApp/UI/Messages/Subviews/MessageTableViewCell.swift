@@ -8,6 +8,7 @@
 import UIKit
 
 final class MessageTableViewCell: UITableViewCell {
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -40,7 +41,6 @@ final class MessageTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         transform = CGAffineTransform(rotationAngle: Double.pi)
         backgroundColor = .clear
         

@@ -9,7 +9,7 @@ import Foundation
 
 // ref: https://discord.com/developers/docs/resources/channel#channel-object
 // types: https://discord.com/developers/docs/resources/channel#channel-object-channel-types
-struct DiscordChannel: Decodable {
+struct DiscordChannel: Codable {
     let id: String                              // unique ID
     let type: Int                               // type of channel
     let guild_id: String?                       // ID of the guild (may be missing for some channels)

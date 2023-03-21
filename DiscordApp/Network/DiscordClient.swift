@@ -10,21 +10,23 @@ import OSLog
 
 final class DiscordClient {
     private static let baseURL = "https://discord.com/api/v9"
-    private static let token = "NDIwMTQ5ODY5NjAxMzU3ODI0.GcWC5s.8nEQeCww4xmCHXF-bX19Soq94p0Kyc4yNZuX9Y"
+    private static let token = TokenService.userToken
+    
     
     private static func buildUrl(url: String) -> URL? {
         return URL(string: "\(baseURL)/\(url)")
     }
     
-    private static func buildURLRequest(url: String) -> URLRequest? {
+    private static func buildURLRequest(url: String, method: String = "GET") -> URLRequest? {
         guard let url = buildUrl(url: url) else { return nil }
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(token, forHTTPHeaderField: "Authorization")
+        request.httpMethod = method
         return request
     }
     
-    private static func parseResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?) -> Result<T, NetworkingError>? {
+    private static func parseResponse<T: Codable>(data: Data?, response: URLResponse?, error: Error?) -> Result<T, NetworkingError>? {
         // Общие ошибки
         if let error = error, let urlError = error as? URLError {
             if urlError.code == URLError.cancelled {
@@ -63,12 +65,28 @@ final class DiscordClient {
         }
     }
     
-    private static func makeRequest<T: Decodable>(url: String, completion: @escaping (Result<T, NetworkingError>) -> Void) {
+    private static func makeRequest<T: Codable>(url: String, completion: @escaping (Result<T, NetworkingError>) -> Void) {
         guard let request = buildURLRequest(url: url) else { return }
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let result: Result<T, NetworkingError> = self.parseResponse(data: data, response: response, error: error)
                 else { return }
             DispatchQueue.main.async { completion(result) }
+        }.resume()
+    }
+    
+    private static func makePostRequest(url: String, text: String, completion: @escaping ()->())  {
+        guard var request = buildURLRequest(url: url, method: "POST") else { return }
+        let json: [String: Any] = ["content": text,
+                                   "tts": false,
+                                   ]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: json) else { return }
+        request.httpBody = jsonData
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                completion()
+            }
+            
         }.resume()
     }
     
@@ -85,5 +103,10 @@ final class DiscordClient {
     /// Get messages from channel
     static func getMessages(channelId: String, completion: @escaping (Result<[DiscordMessage], NetworkingError>) -> Void) {
         makeRequest(url: "/channels/\(channelId)/messages", completion: completion)
+    }
+    
+    ///Sends message
+    static func sendMessage(channelId: String, text: String, completion: @escaping ()->())  {
+        makePostRequest(url: "/channels/\(channelId)/messages", text: text, completion: completion)
     }
 }
