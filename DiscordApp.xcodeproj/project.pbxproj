@@ -22,6 +22,9 @@
 		5AA6698429C9B55700FA76B6 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698329C9B55700FA76B6 /* NSLock.swift */; };
 		5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698529C9B56C00FA76B6 /* Staging.swift */; };
 		5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698729C9B67300FA76B6 /* NetworkingError.swift */; };
+		5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698A29C9BAB100FA76B6 /* AuthViewController.swift */; };
+		5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698D29C9CB4500FA76B6 /* TokenService.swift */; };
+		5AA6699029C9CC7F00FA76B6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		5AA6698329C9B55700FA76B6 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		5AA6698529C9B56C00FA76B6 /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
 		5AA6698729C9B67300FA76B6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		5AA6698A29C9BAB100FA76B6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		5AA6698D29C9CB4500FA76B6 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5AA6698929C9BA8A00FA76B6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6698A29C9BAB100FA76B6 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		5AA6698C29C9CB3500FA76B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6698D29C9CB4500FA76B6 /* TokenService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		5AC087A229C7869000A01A58 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +165,7 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
+				5AA6698C29C9CB3500FA76B6 /* Services */,
 				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087D629C868A800A01A58 /* UI */,
 				5AA6697829C9B49500FA76B6 /* Extensions */,
@@ -152,6 +175,7 @@
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
 				5AC087B729C7869200A01A58 /* Assets.xcassets */,
 				5AC087BC29C7869200A01A58 /* Info.plist */,
+				5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */,
 			);
 			path = DiscordApp;
 			sourceTree = "<group>";
@@ -184,9 +208,10 @@
 		5AC087D629C868A800A01A58 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5A8C86D429C90F0300AB91A8 /* Subviews */,
 				5A8C86C429C8BE4F00AB91A8 /* Main */,
+				5AA6698929C9BA8A00FA76B6 /* Auth */,
 				F9D055E829C8C5AF00C55037 /* Messages */,
+				5A8C86D429C90F0300AB91A8 /* Subviews */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -295,13 +320,16 @@
 				5AC087CF29C7AA9500A01A58 /* DiscordUser.swift in Sources */,
 				5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */,
 				5AC087C429C78C6800A01A58 /* DiscordClient.swift in Sources */,
+				5AA6699029C9CC7F00FA76B6 /* KeychainStorage.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
+				5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */,
 				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
 				5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */,
+				5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */,
 				5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */,
 				F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */,
 				5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */,
