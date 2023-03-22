@@ -27,7 +27,7 @@ final class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        isModalInPresentation = true
         
         view.backgroundColor = UIColor(named: "Background")
         [webView].forEach {
