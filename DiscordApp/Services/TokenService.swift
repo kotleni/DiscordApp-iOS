@@ -8,7 +8,7 @@
 import Foundation
 
 class TokenService {
-    @KeychainStorage(key: "accessTokenKeychainKesy", defaultValue: nil)
+    @KeychainStorage(key: "accessTokenKeychainKey", defaultValue: nil)
     static var userToken: String?
     
     static var isValidToken: Bool { userToken != .none }
