@@ -29,7 +29,6 @@ final class AuthViewController: UIViewController {
         
         isModalInPresentation = true
         
-        view.backgroundColor = UIColor(named: "Background")
         [webView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
@@ -46,7 +45,7 @@ final class AuthViewController: UIViewController {
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
             webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             webView.leftAnchor.constraint(equalTo: view.leftAnchor),
             webView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
