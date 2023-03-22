@@ -62,9 +62,12 @@ final class AuthViewController: UIViewController {
             forMainFrameOnly: true
         )
         
-        webView.configuration.userContentController.add(self, name: "injectJsHandler")
-        webView.configuration.userContentController
-            .addUserScript(script)
+        let controller = webView.configuration.userContentController
+        controller.removeAllScriptMessageHandlers()
+        controller.add(self, name: "injectJsHandler")
+        controller.addUserScript(script)
+        
+        Logger.logInfo(message: "Injected JS: \(code)")
     }
 }
 
