@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4544AA29CB14CC006B40D6 /* UIColor.swift */; };
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
 		5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C629C8BFE700AB91A8 /* DataCache.swift */; };
 		5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A4544AA29CB14CC006B40D6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
 		5A8C86C829C8C02400AB91A8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				5AA6697F29C9B53900FA76B6 /* Error.swift */,
 				5AA6698129C9B54700FA76B6 /* URLResponse.swift */,
 				5AA6698329C9B55700FA76B6 /* NSLock.swift */,
+				5A4544AA29CB14CC006B40D6 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
 				F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */,
+				5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */,
 				5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
