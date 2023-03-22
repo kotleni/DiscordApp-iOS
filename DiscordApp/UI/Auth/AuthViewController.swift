@@ -36,11 +36,8 @@ final class AuthViewController: UIViewController {
         }
         
         setUpConstraints()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
+        // Load auth page
         let myURL = URL(string: authLink)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
