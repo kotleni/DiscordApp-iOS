@@ -26,7 +26,7 @@ final class MessagesViewController: UIViewController {
         let textField = UITextField()
         textField.layer.cornerRadius = 10
         textField.borderStyle = .roundedRect
-        textField.backgroundColor = UIColor(named: "TextFieldBackground")
+        textField.backgroundColor = Assets.Colors.textFieldBackground.color
         textField.placeholder = "Message"
         
         return textField
@@ -34,7 +34,7 @@ final class MessagesViewController: UIViewController {
     
     private lazy var messageSendButton: CircularButton = {
         let button = CircularButton(type: .system)
-        button.backgroundColor = UIColor(named: "ButtonColor")
+        button.backgroundColor = Assets.Colors.buttonColor.color
         button.tintColor = .white
         button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
@@ -57,7 +57,7 @@ final class MessagesViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        view.backgroundColor = UIColor(named: "Plane")
+        view.backgroundColor = Assets.Colors.plane.color
         tableView.backgroundColor = .clear
         title = channel?.name ?? "Text channel"
         edgesForExtendedLayout = .all

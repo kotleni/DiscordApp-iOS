@@ -11,7 +11,7 @@ class GuildSelectView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let color: UIColor = UIColor(named: "GuildSelector") ?? .red
+        let color: UIColor = Assets.Colors.guildSelector.color
         let bpath: UIBezierPath = UIBezierPath(rect: rect)
         color.set()
         bpath.fill()

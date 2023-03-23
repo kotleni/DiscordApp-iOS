@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
     private lazy var channelsCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createChannelCollectionLayout())
         
-        view.backgroundColor = UIColor(named: "Plane")
+        view.backgroundColor = Assets.Colors.plane.color
         view.layer.cornerRadius = 8.0
         view.layer.masksToBounds = true
         view.register(ChannelViewCell.self, forCellWithReuseIdentifier: "channel")
@@ -39,7 +39,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "Background")
+        view.backgroundColor = Assets.Colors.background.color
         [guildsCollectionView, channelsCollectionView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)

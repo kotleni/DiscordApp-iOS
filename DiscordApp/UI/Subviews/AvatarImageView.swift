@@ -11,7 +11,7 @@ import UIKit
 class AvatarImageView: UIImageView {
     private lazy var charLabel: UILabel = {
         let view = UILabel()
-        view.backgroundColor = UIColor(named: "Discord")
+        view.backgroundColor = Assets.Colors.discord.color
         view.textColor = .white
         view.font = .boldSystemFont(ofSize: 22)
         view.textAlignment = .center

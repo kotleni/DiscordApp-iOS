@@ -12,7 +12,7 @@ class DividerView: UIView {
         super.draw(rect)
         
         let bpath: UIBezierPath = UIBezierPath(rect: rect)
-        UIColor(named: "Divider")?.set()
+        Assets.Colors.divider.color.set()
         bpath.fill()
     }
 }
