@@ -100,7 +100,7 @@ final class MessagesViewController: UIViewController {
         let padding = 10.0
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor, constant: -8.0),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             
