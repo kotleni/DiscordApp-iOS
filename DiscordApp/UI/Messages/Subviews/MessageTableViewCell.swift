@@ -11,6 +11,7 @@ final class MessageTableViewCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
+        label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -18,6 +19,7 @@ final class MessageTableViewCell: UITableViewCell {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.text = "Message..."
+        label.font = .systemFont(ofSize: 15)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -25,7 +27,7 @@ final class MessageTableViewCell: UITableViewCell {
     
     private let timestampLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Arial", size: 12)
+        label.font = .systemFont(ofSize: 13)
         label.text = "Time"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -55,8 +57,8 @@ final class MessageTableViewCell: UITableViewCell {
     }
     
     private func setUpConstraints() {
-        let padding = 10.0
-        let avatarWidth = 50.0
+        let padding = 8.0
+        let avatarWidth = 35.0
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
