@@ -30,7 +30,7 @@ final class MainViewController: UIViewController {
         view.dataSource = self
         return view
     }()
-    private let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    private let loadingAlert = UIAlertController(title: nil, message: Text.alertWaitloading, preferredStyle: .alert)
     
     private var guilds: [DiscordGuild] = []
     private var channels: [DiscordChannel] = []

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000429CC4EBC00CF7969 /* Assets.swift */; };
+		5A22000729CC4EBC00CF7969 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000529CC4EBC00CF7969 /* Text.swift */; };
 		5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A22000129CC4BA500CF7969 /* Localizable.strings */; };
 		5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4544AA29CB14CC006B40D6 /* UIColor.swift */; };
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
@@ -49,6 +51,8 @@
 		05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.release.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.release.xcconfig"; sourceTree = "<group>"; };
 		5A22000029CC4BA500CF7969 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A22000229CC4BB100CF7969 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A22000429CC4EBC00CF7969 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		5A22000529CC4EBC00CF7969 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		5A4544AA29CB14CC006B40D6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		5A22000329CC4C7400CF7969 /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				5A22000429CC4EBC00CF7969 /* Assets.swift */,
+				5A22000529CC4EBC00CF7969 /* Text.swift */,
 			);
 			path = SwiftGen;
 			sourceTree = "<group>";
@@ -423,10 +429,12 @@
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */,
 				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
+				5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
+				5A22000729CC4EBC00CF7969 /* Text.swift in Sources */,
 				5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */,
 				5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */,
 				5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */,

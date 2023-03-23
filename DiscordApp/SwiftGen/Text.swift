@@ -12,6 +12,11 @@ import Foundation
 */
 
 enum Text {
+    /// Localizable.strings
+    ///   DiscordApp
+    /// 
+    ///   Created by Victor Varenik on 23.03.2023.
+    static let alertWaitloading = Text.tr("Localizable", "alert_waitloading", fallback: "Loading...")
 }
 
 extension Text {
