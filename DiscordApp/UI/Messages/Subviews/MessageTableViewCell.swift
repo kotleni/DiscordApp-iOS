@@ -30,11 +30,18 @@ final class MessageTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var avatarImageView: AvatarImageView = {
-        let avatarImageView = AvatarImageView()
+    private lazy var avatarImageView: CachedImageView = {
+        let avatarImageView = CachedImageView(type: .avatar)
         avatarImageView.backgroundColor = .white
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
+    }()
+    
+    private lazy var contentImageView: CachedImageView = {
+        let imageView = CachedImageView(type: .content)
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,7 +49,7 @@ final class MessageTableViewCell: UITableViewCell {
         transform = CGAffineTransform(rotationAngle: Double.pi)
         backgroundColor = .clear
         
-        [avatarImageView, nameLabel, messageLabel, timestampLabel].forEach {
+        [avatarImageView, contentImageView, nameLabel, messageLabel, timestampLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -53,9 +60,16 @@ final class MessageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        contentImageView.image = nil
+        contentImageView.isHidden = true
+    }
+    
     private func setUpConstraints() {
         let padding = 8.0
         let avatarWidth = 35.0
+        let maximumImageHeight = 200.0
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
@@ -74,7 +88,12 @@ final class MessageTableViewCell: UITableViewCell {
             messageLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
             messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -padding)
+            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentImageView.topAnchor, constant: -padding),
+            
+            contentImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
+            contentImageView.trailingAnchor.constraint(equalTo: timestampLabel.trailingAnchor, constant: -padding),
+            contentImageView.heightAnchor.constraint(lessThanOrEqualToConstant: maximumImageHeight),
+            contentImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
     }
     
@@ -98,10 +117,28 @@ final class MessageTableViewCell: UITableViewCell {
         return dateFormatter.string(from: date)
     }
     
+    private func loadAttachments(_ attachments: [DiscordAttachment]) {
+        attachments.forEach { attachment in
+            switch attachment.contentType {
+            case "image/png":
+                fallthrough
+            case "image/jpeg":
+                contentImageView.bindData(url: attachment.url)
+            default:
+                break
+            }
+        }
+    }
+    
     func setMessage(_ message: DiscordMessage) {
         nameLabel.text = message.author.username
         messageLabel.text = message.content
         timestampLabel.text = getDate(message.timestamp)
         setImage(by: message.author)
+        
+        if !message.attachments.isEmpty {
+            contentImageView.isHidden = false
+            loadAttachments(message.attachments)
+        }
     }
 }

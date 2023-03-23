@@ -38,6 +38,8 @@ final class MessagesViewController: UIViewController {
         return button
     }()
     
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
     private var channel: DiscordChannel?
     private let rotationAngle = Double.pi     // 180˚ in radians
     private let watchdogTimerDelay = 1.5      // in secs
@@ -58,7 +60,7 @@ final class MessagesViewController: UIViewController {
         title = channel?.name ?? "????"
         edgesForExtendedLayout = .all
         
-        [tableView, messageTextField, messageSendButton].forEach {
+        [tableView, messageTextField, messageSendButton, activityIndicator].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -68,6 +70,7 @@ final class MessagesViewController: UIViewController {
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        activityIndicator.startAnimating()
         startWatchdog()
     }
     
@@ -112,7 +115,10 @@ final class MessagesViewController: UIViewController {
             messageSendButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             messageSendButton.heightAnchor.constraint(equalTo: messageTextField.heightAnchor),
             messageSendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
-            messageSendButton.widthAnchor.constraint(equalTo: messageSendButton.heightAnchor)
+            messageSendButton.widthAnchor.constraint(equalTo: messageSendButton.heightAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
         ])
     }
     
@@ -128,7 +134,7 @@ final class MessagesViewController: UIViewController {
                 if messages.last != self.messages.last {
                     self.messages = messages
                     self.tableView.reloadData()
-//                    self.tableView.scrollToRow(at: IndexPath(row: .zero, section: .zero), at: .bottom, animated: true)
+                    self.activityIndicator.stopAnimating()
                 }
             case .failure(let err):
                 err.presetErrorAlert(viewController: self)

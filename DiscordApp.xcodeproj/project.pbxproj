@@ -18,7 +18,7 @@
 		5A8C86CC29C8D20900AB91A8 /* DiscordAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CB29C8D20900AB91A8 /* DiscordAttachment.swift */; };
 		5A8C86CE29C8D9F500AB91A8 /* ChannelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */; };
 		5A8C86D729C90F0300AB91A8 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86D529C90F0300AB91A8 /* DividerView.swift */; };
-		5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86D629C90F0300AB91A8 /* AvatarImageView.swift */; };
+		5A8C86D829C90F0300AB91A8 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86D629C90F0300AB91A8 /* CachedImageView.swift */; };
 		5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697929C9B4A700FA76B6 /* String.swift */; };
 		5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697B29C9B4BF00FA76B6 /* NSObject.swift */; };
 		5AA6697E29C9B4D800FA76B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6697D29C9B4D800FA76B6 /* UIViewController.swift */; };
@@ -62,7 +62,7 @@
 		5A8C86CB29C8D20900AB91A8 /* DiscordAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordAttachment.swift; sourceTree = "<group>"; };
 		5A8C86CD29C8D9F500AB91A8 /* ChannelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewCell.swift; sourceTree = "<group>"; };
 		5A8C86D529C90F0300AB91A8 /* DividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
-		5A8C86D629C90F0300AB91A8 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		5A8C86D629C90F0300AB91A8 /* CachedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		5AA6697929C9B4A700FA76B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5AA6697B29C9B4BF00FA76B6 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		5AA6697D29C9B4D800FA76B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5A8C86D529C90F0300AB91A8 /* DividerView.swift */,
-				5A8C86D629C90F0300AB91A8 /* AvatarImageView.swift */,
+				5A8C86D629C90F0300AB91A8 /* CachedImageView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -430,7 +430,7 @@
 			files = (
 				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
 				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
-				5A8C86D829C90F0300AB91A8 /* AvatarImageView.swift in Sources */,
+				5A8C86D829C90F0300AB91A8 /* CachedImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
 				F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */,
 				5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */,

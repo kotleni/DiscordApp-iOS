@@ -8,7 +8,13 @@
 import UIKit
 
 /// ImageView for avatar, can generate single char image
-class AvatarImageView: UIImageView {
+class CachedImageView: UIImageView {
+    enum ImageType {
+        case avatar, content
+    }
+    
+    private var imageType: ImageType = .content
+    
     private lazy var charLabel: UILabel = {
         let view = UILabel()
         view.backgroundColor = Assets.Colors.discord.color
@@ -23,13 +29,24 @@ class AvatarImageView: UIImageView {
     
     var isPrepareForReuseEnabled = true
     
+    init(type: ImageType) {
+        super.init(image: nil)
+        imageType = type
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = min(bounds.width, bounds.height) / 2
-        layer.masksToBounds = true
-        
-        if isSingleCharMode {
-            charLabel.frame = bounds
+        if imageType == .avatar {
+            layer.cornerRadius = min(bounds.width, bounds.height) / 2
+            layer.masksToBounds = true
+            
+            if isSingleCharMode {
+                charLabel.frame = bounds
+            }
         }
     }
     
@@ -73,8 +90,10 @@ class AvatarImageView: UIImageView {
         imageLoader.cancel()
     }
     
-    func bindData(name: String, url: String?) {
-        setSingleChar(char: name.first ?? "-")
+    func bindData(name: String = "", url: String?) {
+        if imageType == .avatar {
+            setSingleChar(char: name.first ?? "-")
+        }
         guard let url = url else { return }
         loadImage(url)
     }
