@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000429CC4EBC00CF7969 /* Assets.swift */; };
 		5A22000729CC4EBC00CF7969 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000529CC4EBC00CF7969 /* Text.swift */; };
+		5A22000C29CC666100CF7969 /* MessageFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000B29CC666100CF7969 /* MessageFieldView.swift */; };
 		5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A22000129CC4BA500CF7969 /* Localizable.strings */; };
 		5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4544AA29CB14CC006B40D6 /* UIColor.swift */; };
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
@@ -53,6 +54,7 @@
 		5A22000229CC4BB100CF7969 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A22000429CC4EBC00CF7969 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		5A22000529CC4EBC00CF7969 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		5A22000B29CC666100CF7969 /* MessageFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFieldView.swift; sourceTree = "<group>"; };
 		5A4544AA29CB14CC006B40D6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */,
 				F9D055EC29CA20EF00C55037 /* CircularButton.swift */,
+				5A22000B29CC666100CF7969 /* MessageFieldView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
+				5A22000C29CC666100CF7969 /* MessageFieldView.swift in Sources */,
 				5A22000729CC4EBC00CF7969 /* Text.swift in Sources */,
 				5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */,
 				5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */,

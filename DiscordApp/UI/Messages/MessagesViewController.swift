@@ -22,13 +22,9 @@ final class MessagesViewController: UIViewController {
         return view
     }()
     
-    private let messageTextField: UITextField = {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 10
-        textField.borderStyle = .roundedRect
-        textField.backgroundColor = Assets.Colors.messageFieldBackground.color
+    private let messageTextField: MessageFiledView = {
+        let textField = MessageFiledView(frame: .zero)
         textField.placeholder = "Message"
-        
         return textField
     }()
     
@@ -100,7 +96,7 @@ final class MessagesViewController: UIViewController {
     }
     
     private func setUpConstraints() {
-        let messageTFHeigh = 50.0
+        let messageTFHeigh = 35.0
         let padding = 10.0
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
