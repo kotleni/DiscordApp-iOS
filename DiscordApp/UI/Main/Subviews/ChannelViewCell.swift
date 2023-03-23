@@ -41,7 +41,7 @@ class ChannelViewCell: UICollectionViewCell {
             nameLabel.leftAnchor.constraint(equalTo: iconImage.rightAnchor, constant: padding),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -padding),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding),
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
     }
     

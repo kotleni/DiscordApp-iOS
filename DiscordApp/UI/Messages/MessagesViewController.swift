@@ -24,7 +24,7 @@ final class MessagesViewController: UIViewController {
     
     private let messageTextField: MessageFiledView = {
         let textField = MessageFiledView(frame: .zero)
-        textField.placeholder = "Message"
+        textField.placeholder = Text.hintEntermsg
         return textField
     }()
     
@@ -55,7 +55,7 @@ final class MessagesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         view.backgroundColor = Assets.Colors.plane.color
         tableView.backgroundColor = .clear
-        title = channel?.name ?? "Text channel"
+        title = channel?.name ?? "????"
         edgesForExtendedLayout = .all
         
         [tableView, messageTextField, messageSendButton].forEach {
