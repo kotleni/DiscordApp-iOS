@@ -1,0 +1,96 @@
+// swiftlint:disable all
+{% if tables.count > 0 %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+import Foundation
+
+/*
+
+ Стандартный нейминг:
+ "модуль"."элемент" -> "onboarding.helloButton"
+
+ Если элемент принимает несколько текстовых параметров:
+ "модуль"."элемент"."параметр" -> "login.textfield.placeholder"
+
+*/
+
+{% macro parametersBlock types %}
+    {%- for type in types -%}
+        {%- if type == "String" -%}
+        _ p{{forloop.counter}}: Any
+        {%- else -%}
+        _ p{{forloop.counter}}: {{type}}
+        {%- endif -%}
+        {{ ", " if not forloop.last }}
+    {%- endfor -%}
+{% endmacro %}
+{% macro argumentsBlock types %}
+        {%- for type in types -%}
+        {%- if type == "String" -%}
+        String(describing: p{{forloop.counter}})
+        {%- elif type == "UnsafeRawPointer" -%}
+        Int(bitPattern: p{{forloop.counter}})
+        {%- else -%}
+        p{{forloop.counter}}
+        {%- endif -%}
+        {{ ", " if not forloop.last }}
+    {%- endfor -%}
+{% endmacro %}
+{% macro recursiveBlock table item %}
+    {% for string in item.strings %}
+    {% if not param.noComments %}
+    {% for line in string.comment|default:string.translation|split:"\n" %}
+    /// {{line}}
+    {% endfor %}
+    {% endif %}
+    {% set translation string.translation|replace:'"','\"'|replace:'	','\t' %}
+    {% if string.types %}
+    static func {{string.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}({% call parametersBlock string.types %}) -> String {
+        return {{enumName}}.tr("{{table}}", "{{string.key}}", {%+ call argumentsBlock string.types %}, fallback: "{{translation}}")
+    }
+    {% elif param.lookupFunction %}
+    static var {{string.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: String { return {{enumName}}.tr("{{table}}", "{{string.key}}", fallback: "{{translation}}") }
+    {% else %}
+    static let {{string.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{enumName}}.tr("{{table}}", "{{string.key}}", fallback: "{{translation}}")
+    {% endif %}
+    {% endfor %}
+    {% for child in item.children %}
+    enum {{child.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:1,"    ",true %}{% call recursiveBlock table child %}{% endfilter %}
+    }
+    {% endfor %}
+{% endmacro %}
+{% set enumName %}{{param.enumName|default:"Text"}}{% endset %}
+enum {{enumName}} {
+    {% if tables.count > 1 or param.forceFileNameEnum %}
+    {% for table in tables %}
+    enum {{table.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:1,"    ",true %}{% call recursiveBlock table.name table.levels %}{% endfilter %}
+    }
+    {% endfor %}
+    {% else %}
+    {% call recursiveBlock tables.first.name tables.first.levels %}
+    {% endif %}
+}
+
+extension {{enumName}} {
+    private static func tr(_ table: String, _ key: String, _ args: CVarArg..., fallback value: String) -> String {
+        {% if param.lookupFunction %}
+        let format = {{ param.lookupFunction }}(key, table, value)
+        {% else %}
+        let format = {{param.bundle|default:"BundleToken.bundle"}}.localizedString(forKey: key, value: value, table: table)
+        {% endif %}
+        return String(format: format, locale: Locale.current, arguments: args)
+    }
+}
+{% if not param.bundle and not param.lookupFunction %}
+
+private final class BundleToken {
+    static let bundle: Bundle = {
+        Bundle(for: BundleToken.self)
+    }()
+}
+{% endif %}
+{% else %}
+// No string found
+{% endif %}
+

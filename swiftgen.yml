@@ -1,0 +1,12 @@
+strings:
+    inputs: DiscordApp/Localizations/en.lproj
+    filter: .+\.strings$
+    outputs:
+        - templatePath: swiftgen/localization.stencil
+          output: DiscordApp/SwiftGen/Text.swift
+
+xcassets:
+    inputs: DiscordApp/Assets.xcassets
+    outputs:
+    - templatePath: swiftgen/xcassets.stencil
+      output: DiscordApp/SwiftGen/Assets.swift

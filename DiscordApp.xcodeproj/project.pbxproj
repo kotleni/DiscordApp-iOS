@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A22000129CC4BA500CF7969 /* Localizable.strings */; };
 		5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4544AA29CB14CC006B40D6 /* UIColor.swift */; };
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
 		5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C629C8BFE700AB91A8 /* DataCache.swift */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.release.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.release.xcconfig"; sourceTree = "<group>"; };
+		5A22000029CC4BA500CF7969 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A22000229CC4BB100CF7969 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A4544AA29CB14CC006B40D6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
@@ -104,8 +107,22 @@
 				B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */,
 				05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A22000329CC4C7400CF7969 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		5A22FFFA29CC4A3300CF7969 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				5A22000129CC4BA500CF7969 /* Localizable.strings */,
+			);
+			path = Localizations;
 			sourceTree = "<group>";
 		};
 		5A8C86C429C8BE4F00AB91A8 /* Main */ = {
@@ -187,9 +204,11 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A22000329CC4C7400CF7969 /* SwiftGen */,
 				5AA6698C29C9CB3500FA76B6 /* Services */,
 				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087D629C868A800A01A58 /* UI */,
+				5A22FFFA29CC4A3300CF7969 /* Localizations */,
 				5AA6697829C9B49500FA76B6 /* Extensions */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
@@ -272,6 +291,7 @@
 			buildConfigurationList = 5AC087BF29C7869200A01A58 /* Build configuration list for PBXNativeTarget "DiscordApp" */;
 			buildPhases = (
 				08F91CC82655CF750D8A9FF1 /* [CP] Check Pods Manifest.lock */,
+				5A22FFF929CC4A1900CF7969 /* SwiftGen */,
 				5AC087A729C7869000A01A58 /* Sources */,
 				5AC087A829C7869000A01A58 /* Frameworks */,
 				5AC087A929C7869000A01A58 /* Resources */,
@@ -307,6 +327,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 5AC087A229C7869000A01A58;
 			productRefGroup = 5AC087AC29C7869000A01A58 /* Products */;
@@ -323,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */,
 				5AC087BB29C7869200A01A58 /* LaunchScreen.storyboard in Resources */,
 				5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */,
 			);
@@ -352,6 +374,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5A22FFF929CC4A1900CF7969 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"$PODS_ROOT\"/SwiftGen/bin/swiftgen\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -398,6 +438,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5A22000129CC4BA500CF7969 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A22000029CC4BA500CF7969 /* en */,
+				5A22000229CC4BB100CF7969 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -413,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -473,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
