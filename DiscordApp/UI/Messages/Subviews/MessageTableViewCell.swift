@@ -8,7 +8,6 @@
 import UIKit
 
 final class MessageTableViewCell: UITableViewCell {
-    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"

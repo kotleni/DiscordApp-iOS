@@ -9,7 +9,6 @@ import UIKit
 
 // MARK: UIViewController
 final class MessagesViewController: UIViewController {
-    
     private lazy var tableView: UITableView = {
         let padding = 10.0
         let view = UITableView(frame: .zero, style: .plain)
@@ -56,8 +55,8 @@ final class MessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         view.backgroundColor = UIColor(named: "Plane")
         tableView.backgroundColor = .clear
         title = channel?.name ?? "Text channel"
@@ -76,20 +75,28 @@ final class MessagesViewController: UIViewController {
         startWatchdog()
     }
     
-    @objc private func sendMessage(sender: CircularButton) {
+    @objc
+    private func sendMessage(sender: CircularButton) {
         DiscordClient.sendMessage(channelId: channel!.id, text: messageTextField.text ?? "") { [self] in
             messageTextField.text = ""
         }
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             self.view.frame.origin.y -= keyboardSize.height
         }
     }
 
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
+    }
+    
+    @objc
+    private func updateChat() {
+        fetchMessages()
     }
     
     private func setUpConstraints() {
@@ -100,19 +107,17 @@ final class MessagesViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            
             messageTextField.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             messageTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             messageTextField.trailingAnchor.constraint(equalTo: messageSendButton.leadingAnchor, constant: -padding),
             messageTextField.heightAnchor.constraint(equalToConstant: messageTFHeigh),
+            
             messageSendButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             messageSendButton.heightAnchor.constraint(equalTo: messageTextField.heightAnchor),
             messageSendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
             messageSendButton.widthAnchor.constraint(equalTo: messageSendButton.heightAnchor)
         ])
-    }
-    
-    @objc private func updateChat() {
-        fetchMessages()
     }
     
     private func startWatchdog() {
