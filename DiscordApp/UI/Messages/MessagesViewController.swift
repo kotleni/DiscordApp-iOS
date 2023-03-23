@@ -26,7 +26,7 @@ final class MessagesViewController: UIViewController {
         let textField = UITextField()
         textField.layer.cornerRadius = 10
         textField.borderStyle = .roundedRect
-        textField.backgroundColor = Assets.Colors.textFieldBackground.color
+        textField.backgroundColor = Assets.Colors.messageFieldBackground.color
         textField.placeholder = "Message"
         
         return textField

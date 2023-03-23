@@ -9,8 +9,8 @@ enum Assets {
         static let discord = ColorAsset(name: "Discord")
         static let divider = ColorAsset(name: "Divider")
         static let guildSelector = ColorAsset(name: "GuildSelector")
+        static let messageFieldBackground = ColorAsset(name: "MessageFieldBackground")
         static let plane = ColorAsset(name: "Plane")
-        static let textFieldBackground = ColorAsset(name: "TextFieldBackground")
     }
 }
 
