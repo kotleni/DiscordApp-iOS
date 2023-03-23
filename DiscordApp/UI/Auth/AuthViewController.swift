@@ -62,7 +62,7 @@ final class AuthViewController: UIViewController {
         controller.removeAllScriptMessageHandlers()
         controller.add(self, name: "injectJsHandler")
         controller.addUserScript(script)
-        
+
         Logger.logInfo(message: "Injected JS: \(code)")
     }
 }
@@ -72,7 +72,7 @@ extension AuthViewController: WKNavigationDelegate {
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         defer { decisionHandler(.allow) }
         guard let url = navigationAction.request.url else { return }
-        
+
         // Auth ok
         if url.absoluteString == appLink {
             // Magic script for fetching auth token
@@ -94,7 +94,7 @@ extension AuthViewController: WKScriptMessageHandler {
                 print("Could not locate payload param in callback request")
                 return
             }
-            
+
             print("Token received: \(token)")
             TokenService.userToken = token
             dismiss(animated: true)
