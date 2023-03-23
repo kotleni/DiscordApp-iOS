@@ -30,7 +30,7 @@ final class MainViewController: UIViewController {
         view.dataSource = self
         return view
     }()
-    private let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    private let loadingAlert = UIAlertController(title: nil, message: Text.alertWaitloading, preferredStyle: .alert)
     
     private var guilds: [DiscordGuild] = []
     private var channels: [DiscordChannel] = []
@@ -76,7 +76,7 @@ final class MainViewController: UIViewController {
                 err.presetErrorAlert(viewController: self)
             case .success(let guilds):
                 self?.guilds = guilds.sorted(by: { first, _ in
-                    guard let isOwner = first.owner else { return false }
+                    guard let isOwner = first.isOwner else { return false }
                     return isOwner // owned first
                 })
                 
@@ -178,14 +178,20 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case guildsCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "guild", for: indexPath) as! GuildViewCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "guild",
+                for: indexPath
+            ) as? GuildViewCell
+            guard let cell = cell else { fatalError("Cannon cast cell to GuildViewCell") }
             let guild = guilds[indexPath.row]
-            let name = guild.name
-            let url = guild.getIconUrl()
-            cell.configure(name: name, url: url)
+            cell.configure(name: guild.name, url: guild.getIconUrl())
             return cell
         case channelsCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "channel", for: indexPath) as! ChannelViewCell
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "channel",
+                for: indexPath
+            ) as? ChannelViewCell
+            guard let cell = cell else { fatalError("Cannon cast cell to ChannelViewCell") }
             guard let channelName = channels[indexPath.row].name else { return cell }
             cell.configure(name: channelName)
             return cell
@@ -211,7 +217,8 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case guildsCollectionView:
-            let cell = collectionView.cellForItem(at: indexPath) as! GuildViewCell
+            let cell = collectionView.cellForItem(at: indexPath) as? GuildViewCell
+            guard let cell = cell else { fatalError("Cell cannon be casted to GuildViewCell") }
             cell.select()
             
             let guildId = guilds[indexPath.row].id
@@ -227,7 +234,8 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         switch collectionView {
         case guildsCollectionView:
-            let cell = collectionView.cellForItem(at: indexPath) as! GuildViewCell
+            let cell = collectionView.cellForItem(at: indexPath) as? GuildViewCell
+            guard let cell = cell else { fatalError("Cell cannon be casted to GuildViewCell") }
             cell.deselect()
         case channelsCollectionView:
             break

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  DiscordApp
+
+  Created by Victor Varenik on 23.03.2023.
+  
+*/
+
+"alert_waitloading" = "Loading...";

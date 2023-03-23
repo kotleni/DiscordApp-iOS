@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000429CC4EBC00CF7969 /* Assets.swift */; };
+		5A22000729CC4EBC00CF7969 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22000529CC4EBC00CF7969 /* Text.swift */; };
+		5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A22000129CC4BA500CF7969 /* Localizable.strings */; };
 		5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4544AA29CB14CC006B40D6 /* UIColor.swift */; };
 		5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */; };
 		5A8C86C729C8BFE700AB91A8 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8C86C629C8BFE700AB91A8 /* DataCache.swift */; };
@@ -38,12 +41,18 @@
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
+		96C426EC28D1D58182B295F5 /* Pods_DiscordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */; };
 		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
 		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
 		F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055EC29CA20EF00C55037 /* CircularButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.release.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.release.xcconfig"; sourceTree = "<group>"; };
+		5A22000029CC4BA500CF7969 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A22000229CC4BB100CF7969 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A22000429CC4EBC00CF7969 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		5A22000529CC4EBC00CF7969 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		5A4544AA29CB14CC006B40D6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A8C86C229C89DA700AB91A8 /* GuildSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSelectView.swift; sourceTree = "<group>"; };
 		5A8C86C629C8BFE700AB91A8 /* DataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCache.swift; sourceTree = "<group>"; };
@@ -77,6 +86,8 @@
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
+		9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.debug.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F9D055EC29CA20EF00C55037 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
@@ -87,12 +98,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C426EC28D1D58182B295F5 /* Pods_DiscordApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DB4590CB662F3E8FF14BBF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */,
+				05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5A22000329CC4C7400CF7969 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				5A22000429CC4EBC00CF7969 /* Assets.swift */,
+				5A22000529CC4EBC00CF7969 /* Text.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		5A22FFFA29CC4A3300CF7969 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				5A22000129CC4BA500CF7969 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		5A8C86C429C8BE4F00AB91A8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +194,8 @@
 			children = (
 				5AC087AD29C7869000A01A58 /* DiscordApp */,
 				5AC087AC29C7869000A01A58 /* Products */,
+				4DB4590CB662F3E8FF14BBF8 /* Pods */,
+				FB2ADC7926679632C522105A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,9 +210,11 @@
 		5AC087AD29C7869000A01A58 /* DiscordApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A22000329CC4C7400CF7969 /* SwiftGen */,
 				5AA6698C29C9CB3500FA76B6 /* Services */,
 				5AC087C229C78C5900A01A58 /* Network */,
 				5AC087D629C868A800A01A58 /* UI */,
+				5A22FFFA29CC4A3300CF7969 /* Localizations */,
 				5AA6697829C9B49500FA76B6 /* Extensions */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
@@ -239,6 +281,14 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		FB2ADC7926679632C522105A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +296,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AC087BF29C7869200A01A58 /* Build configuration list for PBXNativeTarget "DiscordApp" */;
 			buildPhases = (
+				08F91CC82655CF750D8A9FF1 /* [CP] Check Pods Manifest.lock */,
+				5A22FFF929CC4A1900CF7969 /* SwiftGen */,
+				5A22000829CC510500CF7969 /* SwiftLint */,
 				5AC087A729C7869000A01A58 /* Sources */,
 				5AC087A829C7869000A01A58 /* Frameworks */,
 				5AC087A929C7869000A01A58 /* Resources */,
@@ -281,6 +334,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 5AC087A229C7869000A01A58;
 			productRefGroup = 5AC087AC29C7869000A01A58 /* Products */;
@@ -297,12 +351,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A22FFFF29CC4BA500CF7969 /* Localizable.strings in Resources */,
 				5AC087BB29C7869200A01A58 /* LaunchScreen.storyboard in Resources */,
 				5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08F91CC82655CF750D8A9FF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiscordApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A22000829CC510500CF7969 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}\"/SwiftLint/swiftlint\n";
+		};
+		5A22FFF929CC4A1900CF7969 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"$PODS_ROOT\"/SwiftGen/bin/swiftgen\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AC087A729C7869000A01A58 /* Sources */ = {
@@ -332,10 +448,12 @@
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */,
 				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
+				5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
+				5A22000729CC4EBC00CF7969 /* Text.swift in Sources */,
 				5AA6698629C9B56C00FA76B6 /* Staging.swift in Sources */,
 				5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */,
 				5AA6697A29C9B4A700FA76B6 /* String.swift in Sources */,
@@ -347,6 +465,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5A22000129CC4BA500CF7969 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A22000029CC4BA500CF7969 /* en */,
+				5A22000229CC4BB100CF7969 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -422,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -474,6 +603,7 @@
 		};
 		5AC087C029C7869200A01A58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -505,6 +635,7 @@
 		};
 		5AC087C129C7869200A01A58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C23A579C0EC7D6532D645A /* Pods-DiscordApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

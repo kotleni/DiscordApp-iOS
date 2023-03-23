@@ -28,4 +28,16 @@ extension String {
 
         return hash.map({ String(format: "%02x", $0) }).joined()
     }
+    
+    /// Get localized string
+    var localized: String {
+        return NSLocalizedString(self, bundle: Bundle(for: BundleClass.self), comment: "")
+    }
+    
+    func localizedWithPlaceholder(arguments: CVarArg...) -> String {
+        return String(format: self, arguments)
+    }
 }
+
+// Neded for .localized
+private class BundleClass { }
