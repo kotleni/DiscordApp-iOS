@@ -10,7 +10,6 @@ import UIKit
 final class MessageTableViewCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Name"
         label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -18,7 +17,6 @@ final class MessageTableViewCell: UITableViewCell {
     
     private let messageLabel: UILabel = {
         let label = UILabel()
-        label.text = "Message..."
         label.font = .systemFont(ofSize: 15)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +26,6 @@ final class MessageTableViewCell: UITableViewCell {
     private let timestampLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)
-        label.text = "Time"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
