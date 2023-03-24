@@ -46,6 +46,8 @@ final class MessagesViewController: UIViewController {
     
     private var messages: [DiscordMessage] = []
     
+    var coordinator: Coordinator?
+    
     convenience init(channel: DiscordChannel) {
         self.init()
         self.channel = channel

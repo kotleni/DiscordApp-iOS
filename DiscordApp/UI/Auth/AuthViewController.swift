@@ -22,6 +22,7 @@ final class AuthViewController: UIViewController {
     private let authLink = "https://discord.com/login"
     private let appLink = "https://discord.com/app"
     
+    var coordinator: Coordinator?
     weak var delegate: AuthViewControllerDelegate?
     
     override func viewDidLoad() {

@@ -36,6 +36,8 @@ final class MainViewController: UIViewController {
     private var channels: [DiscordChannel] = []
     private var currentGuildIndex: Int?
     
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,10 +60,11 @@ final class MainViewController: UIViewController {
         ])
         
         if !TokenService.isValidToken {
-            modalPresentationStyle = .popover
-            let authVC = AuthViewController()
-            authVC.delegate = self
-            present(authVC, animated: true)
+            coordinator?.openAuth(with: self)
+//            modalPresentationStyle = .popover
+//            let authVC = AuthViewController()
+//            authVC.delegate = self
+//            present(authVC, animated: true)
         } else {
             fetchGuilds()
         }
@@ -225,7 +228,7 @@ extension MainViewController: UICollectionViewDelegate {
             fetchChannelsFor(guildId: guildId)
         case channelsCollectionView:
             let channel = channels[indexPath.row]
-            navigationController?.pushViewController(MessagesViewController(channel: channel), animated: true)
+            coordinator?.openMessages(channel: channel)
         default:
             fatalError("Wrong collection view")
         }

@@ -42,6 +42,7 @@
 		5AC087D529C8656000A01A58 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D429C8656000A01A58 /* Logger.swift */; };
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
+		5AC6354929CD8883003C4CE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6354829CD8883003C4CE9 /* Coordinator.swift */; };
 		96C426EC28D1D58182B295F5 /* Pods_DiscordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */; };
 		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
 		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		5AC087D429C8656000A01A58 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
+		5AC6354829CD8883003C4CE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.debug.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				5AA6697829C9B49500FA76B6 /* Extensions */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
+				5AC6354829CD8883003C4CE9 /* Coordinator.swift */,
 				5AC087D429C8656000A01A58 /* Logger.swift */,
 				5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */,
 				5AC087B929C7869200A01A58 /* LaunchScreen.storyboard */,
@@ -436,6 +439,7 @@
 				5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */,
 				5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
+				5AC6354929CD8883003C4CE9 /* Coordinator.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,
 				5AA6697E29C9B4D800FA76B6 /* UIViewController.swift in Sources */,
 				5AA6698429C9B55700FA76B6 /* NSLock.swift in Sources */,
