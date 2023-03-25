@@ -44,6 +44,8 @@
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
 		5AC6354929CD8883003C4CE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6354829CD8883003C4CE9 /* Coordinator.swift */; };
 		96C426EC28D1D58182B295F5 /* Pods_DiscordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */; };
+		F971231929CE328800DBAFDA /* AttachmentsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971231829CE328800DBAFDA /* AttachmentsGrid.swift */; };
+		F971231B29CEE43200DBAFDA /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971231A29CEE43200DBAFDA /* UIStackView.swift */; };
 		F9D055E729C8C5A100C55037 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E629C8C5A100C55037 /* MessagesViewController.swift */; };
 		F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */; };
 		F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D055EC29CA20EF00C55037 /* CircularButton.swift */; };
@@ -92,6 +94,8 @@
 		5AC6354829CD8883003C4CE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.debug.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F971231829CE328800DBAFDA /* AttachmentsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsGrid.swift; sourceTree = "<group>"; };
+		F971231A29CEE43200DBAFDA /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		F9D055E629C8C5A100C55037 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F9D055EC29CA20EF00C55037 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				5AA6698129C9B54700FA76B6 /* URLResponse.swift */,
 				5AA6698329C9B55700FA76B6 /* NSLock.swift */,
 				5A4544AA29CB14CC006B40D6 /* UIColor.swift */,
+				F971231A29CEE43200DBAFDA /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				F9D055E929C8C70400C55037 /* MessageTableViewCell.swift */,
 				F9D055EC29CA20EF00C55037 /* CircularButton.swift */,
 				5A22000B29CC666100CF7969 /* MessageFieldView.swift */,
+				F971231829CE328800DBAFDA /* AttachmentsGrid.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -455,6 +461,8 @@
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */,
 				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
+				F971231929CE328800DBAFDA /* AttachmentsGrid.swift in Sources */,
+				F971231B29CEE43200DBAFDA /* UIStackView.swift in Sources */,
 				5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,

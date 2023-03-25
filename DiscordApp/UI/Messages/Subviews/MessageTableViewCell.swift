@@ -8,6 +8,8 @@
 import UIKit
 
 final class MessageTableViewCell: UITableViewCell {
+    private var attachmentsHeightConstraint: NSLayoutConstraint?
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
@@ -37,11 +39,11 @@ final class MessageTableViewCell: UITableViewCell {
         return avatarImageView
     }()
     
-    private lazy var contentImageView: CachedImageView = {
-        let imageView = CachedImageView(type: .content)
-        imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = true
-        return imageView
+    private lazy var attachmentsGrid: AttachmentsGrid = {
+        let attachmentGrid = AttachmentsGrid()
+        attachmentGrid.isHidden = true
+//        attachmentGrid.backgroundColor = .yellow
+        return attachmentGrid
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,7 +51,7 @@ final class MessageTableViewCell: UITableViewCell {
         transform = CGAffineTransform(rotationAngle: Double.pi)
         backgroundColor = .clear
         
-        [avatarImageView, contentImageView, nameLabel, messageLabel, timestampLabel].forEach {
+        [avatarImageView, attachmentsGrid, nameLabel, messageLabel, timestampLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -62,14 +64,17 @@ final class MessageTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        contentImageView.image = nil
-        contentImageView.isHidden = true
+//        contentImageView.image = nil
+//        contentImageView.isHidden = true
+        attachmentsGrid.isHidden = true
+        attachmentsGrid.clearAttachments()
     }
     
     private func setUpConstraints() {
         let padding = 8.0
         let avatarWidth = 35.0
-        let maximumImageHeight = 200.0
+        let maximumGridHeight = 400.0
+        attachmentsHeightConstraint = attachmentsGrid.heightAnchor.constraint(lessThanOrEqualToConstant: maximumGridHeight)
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
@@ -88,12 +93,14 @@ final class MessageTableViewCell: UITableViewCell {
             messageLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
             messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentImageView.topAnchor, constant: -padding),
+            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: attachmentsGrid.topAnchor, constant: -padding),
             
-            contentImageView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
-            contentImageView.trailingAnchor.constraint(equalTo: timestampLabel.trailingAnchor, constant: -padding),
-            contentImageView.heightAnchor.constraint(lessThanOrEqualToConstant: maximumImageHeight),
-            contentImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
+            attachmentsGrid.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: padding),
+            attachmentsGrid.trailingAnchor.constraint(equalTo: timestampLabel.trailingAnchor, constant: -padding),
+//            attachmentsGrid.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: padding),
+//            attachmentsGrid.heightAnchor.constraint(lessThanOrEqualToConstant: maximumGridHeight),
+            attachmentsHeightConstraint!,
+            attachmentsGrid.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
     }
     
@@ -118,15 +125,13 @@ final class MessageTableViewCell: UITableViewCell {
     }
     
     private func loadAttachments(_ attachments: [DiscordAttachment]) {
-        attachments.forEach { attachment in
-            switch attachment.contentType {
-            case "image/png":
-                fallthrough
-            case "image/jpeg":
-                contentImageView.bindData(url: attachment.url)
-            default:
-                break
-            }
+        
+        attachmentsGrid.isHidden = false
+        attachmentsGrid.setAttachments(attachments)
+        if attachments.count > 1 {
+            attachmentsHeightConstraint?.constant = CGFloat(50 * attachmentsGrid.attachmentsCount)
+        } else {
+            attachmentsHeightConstraint?.constant = CGFloat(200)
         }
     }
     
@@ -137,7 +142,6 @@ final class MessageTableViewCell: UITableViewCell {
         setImage(by: message.author)
         
         if !message.attachments.isEmpty {
-            contentImageView.isHidden = false
             loadAttachments(message.attachments)
         }
     }
