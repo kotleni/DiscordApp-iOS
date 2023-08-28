@@ -8,10 +8,10 @@
 import UIKit
 
 final class AttachmentsGrid: UIView {
-    var cachedImageViews: [CachedImageView] = []
+    var attachmentViews: [UIView] = []
     
     public var attachmentsCount: Int {
-        cachedImageViews.count
+        attachmentViews.count
     }
 
     private let leftStackView: UIStackView = {
@@ -73,25 +73,34 @@ final class AttachmentsGrid: UIView {
     }
     
     private func layoutGrid() {
-        rightStackView.isHidden = cachedImageViews.count == 1 ? true : false
+        rightStackView.isHidden = attachmentViews.count == 1 ? true : false
         
-        cachedImageViews.enumerated().forEach { (index, cachedImageView) in
+        attachmentViews.enumerated().forEach { (index, attachmentView) in
             if (index % 2) == 0 && index != 0 {
-                rightStackView.addArrangedSubview(cachedImageView)
-            } else if (index % 2) == 0 && (cachedImageViews.count % 2) == 0 {
-                rightStackView.addArrangedSubview(cachedImageView)
+                rightStackView.addArrangedSubview(attachmentView)
+            } else if (index % 2) == 0 && (attachmentViews.count % 2) == 0 {
+                rightStackView.addArrangedSubview(attachmentView)
             } else {
-                leftStackView.addArrangedSubview(cachedImageView)
+                leftStackView.addArrangedSubview(attachmentView)
             }
         }
     }
     
     public func setAttachments(_ attachments: [DiscordAttachment]) {
         attachments.forEach { attachment in
-            let cachedImageView = CachedImageView(type: .content)
-            cachedImageView.contentMode = .scaleAspectFit
-            cachedImageView.bindData(url: attachment.url)
-            cachedImageViews.append(cachedImageView)
+            switch attachment.contentType?.split(separator: "/").first {
+                case "image":
+                let cachedImageView = CachedImageView(type: .content)
+                cachedImageView.contentMode = .scaleAspectFit
+                cachedImageView.bindData(url: attachment.url)
+                attachmentViews.append(cachedImageView)
+                break
+            default:
+                let label = UILabel()
+                label.text = "Unsupported content type: \(attachment.contentType!)"
+                attachmentViews.append(label)
+                break
+            }
         }
         layoutGrid()
     }
@@ -99,6 +108,6 @@ final class AttachmentsGrid: UIView {
     public func clearAttachments() {
         leftStackView.removeFullyAllArrangedSubviews()
         rightStackView.removeFullyAllArrangedSubviews()
-        cachedImageViews.removeAll()
+        attachmentViews.removeAll()
     }
 }
