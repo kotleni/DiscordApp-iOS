@@ -2,7 +2,7 @@
 //  Message.swift
 //  DiscordApp
 //
-//  Created by Victor Varenik on 19.03.2023.
+//  Created by Viktor Varenik on 19.03.2023.
 //
 
 import Foundation

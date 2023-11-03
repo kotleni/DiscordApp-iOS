@@ -2,7 +2,7 @@
 //  DataCache.swift
 //  DiscordApp
 //
-//  Created by Victor Varenik on 20.03.2023.
+//  Created by Viktor Varenik on 20.03.2023.
 //
 
 import Foundation

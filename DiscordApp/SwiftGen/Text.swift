@@ -15,7 +15,7 @@ enum Text {
     /// Localizable.strings
     ///   DiscordApp
     /// 
-    ///   Created by Victor Varenik on 23.03.2023.
+    ///   Created by Viktor Varenik on 23.03.2023.
     static let alertWaitloading = Text.tr("Localizable", "alert_waitloading", fallback: "Loading...")
     /// Enter message...
     static let hintEntermsg = Text.tr("Localizable", "hint_entermsg", fallback: "Enter message...")

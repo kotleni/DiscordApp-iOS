@@ -2,7 +2,7 @@
 //  Coordinator.swift
 //  DiscordApp
 //
-//  Created by Victor Varenik on 24.03.2023.
+//  Created by Viktor Varenik on 24.03.2023.
 //
 
 import UIKit

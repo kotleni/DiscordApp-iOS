@@ -2,7 +2,7 @@
 //  MessageFieldView.swift
 //  DiscordApp
 //
-//  Created by Victor Varenik on 23.03.2023.
+//  Created by Viktor Varenik on 23.03.2023.
 //
 
 import UIKit

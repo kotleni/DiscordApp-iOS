@@ -2,7 +2,7 @@
 //  UIColor.swift
 //  DiscordApp
 //
-//  Created by Victor Varenik on 22.03.2023.
+//  Created by Viktor Varenik on 22.03.2023.
 //
 
 import UIKit
