@@ -33,6 +33,7 @@
 		5AB60D722B80D92C00042CF6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D712B80D92C00042CF6 /* MainView.swift */; };
 		5AB60D742B80DA3400042CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D732B80DA3400042CF6 /* ViewController.swift */; };
 		5AB60D762B80E07C00042CF6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D752B80E07C00042CF6 /* LoadingView.swift */; };
+		5AB60D782B80FB6000042CF6 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D772B80FB6000042CF6 /* MessagesView.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		5AB60D712B80D92C00042CF6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5AB60D732B80DA3400042CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AB60D752B80E07C00042CF6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5AB60D772B80FB6000042CF6 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				F9D055EB29C8C70900C55037 /* Subviews */,
 				F9D055E629C8C5A100C55037 /* MessagesViewController.swift */,
+				5AB60D772B80FB6000042CF6 /* MessagesView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
 				5AB60D742B80DA3400042CF6 /* ViewController.swift in Sources */,
+				5AB60D782B80FB6000042CF6 /* MessagesView.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
 				5A22000C29CC666100CF7969 /* MessageFieldView.swift in Sources */,

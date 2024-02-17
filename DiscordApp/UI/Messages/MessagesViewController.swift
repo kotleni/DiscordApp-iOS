@@ -8,40 +8,8 @@
 import UIKit
 
 // MARK: UIViewController
-final class MessagesViewController: UIViewController {
-    private lazy var tableView: UITableView = {
-        let padding = 10.0
-        let view = UITableView(frame: .zero, style: .plain)
-        view.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.nameOfClass)
-        // view.contentInset.bottom = self.statusBarHeight + padding
-        view.estimatedRowHeight = 300.0
-        view.rowHeight = UITableView.automaticDimension
-        view.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        view.delegate = self
-        view.dataSource = self
-        return view
-    }()
-    
-    private let messageTextField: MessageFiledView = {
-        let textField = MessageFiledView(frame: .zero)
-        textField.placeholder = Text.hintEntermsg
-        return textField
-    }()
-    
-    private var messageSendButton: CircularButton = {
-        let button = CircularButton(type: .system)
-        button.backgroundColor = Assets.Colors.buttonColor.color
-        button.tintColor = .white
-        button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        return button
-    }()
-    
-    private let activityIndicator = UIActivityIndicatorView(style: .medium)
-    
+final class MessagesViewController: ViewController<MessagesView> {
     private var channel: DiscordChannel?
-    private let rotationAngle = Double.pi     // 180˚ in radians
     private let watchdogTimerDelay = 1.5      // in secs
     
     private var messages: [DiscordMessage] = []
@@ -55,31 +23,29 @@ final class MessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        view.backgroundColor = Assets.Colors.plane.color
-        tableView.backgroundColor = .clear
+        
         title = channel?.name ?? "????"
         edgesForExtendedLayout = .all
         
-        [tableView, messageTextField, messageSendButton, activityIndicator].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
-        }
+        mainView.messageSendButton.addTarget(self, action: #selector(sendMessage), for: .touchDown)
         
-        setUpConstraints()
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator.startAnimating()
+        setLoading(isLoading: true)
         startWatchdog()
     }
     
     @objc
     private func sendMessage(sender: CircularButton) {
-        DiscordClient.sendMessage(channelId: channel!.id, text: messageTextField.text ?? "") { [self] in
-            messageTextField.text = ""
+        DiscordClient.sendMessage(channelId: channel!.id, text: mainView.messageTextField.text ?? "") { [self] in
+            mainView.messageTextField.text = ""
         }
     }
     
@@ -100,30 +66,6 @@ final class MessagesViewController: UIViewController {
         fetchMessages()
     }
     
-    private func setUpConstraints() {
-        let messageTFHeigh = 35.0
-        let padding = 10.0
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor, constant: -8.0),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            
-            messageTextField.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            messageTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            messageTextField.trailingAnchor.constraint(equalTo: messageSendButton.leadingAnchor, constant: -padding),
-            messageTextField.heightAnchor.constraint(equalToConstant: messageTFHeigh),
-            
-            messageSendButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            messageSendButton.heightAnchor.constraint(equalTo: messageTextField.heightAnchor),
-            messageSendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor),
-            messageSendButton.widthAnchor.constraint(equalTo: messageSendButton.heightAnchor),
-            
-            activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
-    }
-    
     private func startWatchdog() {
         Timer.scheduledTimer(timeInterval: watchdogTimerDelay, target: self, selector: #selector(updateChat), userInfo: nil, repeats: true)
     }
@@ -135,8 +77,8 @@ final class MessagesViewController: UIViewController {
             case .success(let messages):
                 if messages.last != self.messages.last {
                     self.messages = messages
-                    self.tableView.reloadData()
-                    self.activityIndicator.stopAnimating()
+                    self.mainView.tableView.reloadData()
+                    self.setLoading(isLoading: false)
                 }
             case .failure(let err):
                 err.presetErrorAlert(viewController: self)

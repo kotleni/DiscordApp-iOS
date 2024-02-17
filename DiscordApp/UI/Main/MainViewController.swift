@@ -47,8 +47,6 @@ final class MainViewController: ViewController<MainView> {
                     return isOwner // owned first
                 })
                 
-                // TODO: Check
-                // TODO: Temporary fix, loading alert can't close normally (if called now)
                 self?.executeWhenViewAlreadyAppeared {
                     self?.mainView.guildsCollectionView.reloadData()
                     self?.setLoading(isLoading: false)
