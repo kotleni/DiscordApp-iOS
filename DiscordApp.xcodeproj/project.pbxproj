@@ -30,6 +30,9 @@
 		5AA6698B29C9BAB100FA76B6 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698A29C9BAB100FA76B6 /* AuthViewController.swift */; };
 		5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698D29C9CB4500FA76B6 /* TokenService.swift */; };
 		5AA6699029C9CC7F00FA76B6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */; };
+		5AB60D722B80D92C00042CF6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D712B80D92C00042CF6 /* MainView.swift */; };
+		5AB60D742B80DA3400042CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D732B80DA3400042CF6 /* ViewController.swift */; };
+		5AB60D762B80E07C00042CF6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60D752B80E07C00042CF6 /* LoadingView.swift */; };
 		5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087AE29C7869000A01A58 /* AppDelegate.swift */; };
 		5AC087B129C7869000A01A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087B029C7869000A01A58 /* SceneDelegate.swift */; };
 		5AC087B829C7869200A01A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC087B729C7869200A01A58 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		5AA6698A29C9BAB100FA76B6 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		5AA6698D29C9CB4500FA76B6 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		5AB60D712B80D92C00042CF6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5AB60D732B80DA3400042CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AB60D752B80E07C00042CF6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5AC087AB29C7869000A01A58 /* DiscordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC087AE29C7869000A01A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC087B029C7869000A01A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			children = (
 				5A8C86CA29C8C2F900AB91A8 /* Subviews */,
 				5AC087D729C868CD00A01A58 /* MainViewController.swift */,
+				5AB60D712B80D92C00042CF6 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 		5A8C86D429C90F0300AB91A8 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				5AB60D752B80E07C00042CF6 /* LoadingView.swift */,
 				5A8C86D529C90F0300AB91A8 /* DividerView.swift */,
 				5A8C86D629C90F0300AB91A8 /* CachedImageView.swift */,
 			);
@@ -227,6 +235,7 @@
 				5AA6697829C9B49500FA76B6 /* Extensions */,
 				5AC087AE29C7869000A01A58 /* AppDelegate.swift */,
 				5AC087B029C7869000A01A58 /* SceneDelegate.swift */,
+				5AB60D732B80DA3400042CF6 /* ViewController.swift */,
 				5AC6354829CD8883003C4CE9 /* Coordinator.swift */,
 				5AC087D429C8656000A01A58 /* Logger.swift */,
 				5AA6698F29C9CC7F00FA76B6 /* KeychainStorage.swift */,
@@ -438,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
+				5AB60D722B80D92C00042CF6 /* MainView.swift in Sources */,
 				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
 				5A8C86D829C90F0300AB91A8 /* CachedImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
@@ -460,12 +470,14 @@
 				5AA6699029C9CC7F00FA76B6 /* KeychainStorage.swift in Sources */,
 				5AC087D529C8656000A01A58 /* Logger.swift in Sources */,
 				5AA6698E29C9CB4500FA76B6 /* TokenService.swift in Sources */,
+				5AB60D762B80E07C00042CF6 /* LoadingView.swift in Sources */,
 				5AA6698029C9B53900FA76B6 /* Error.swift in Sources */,
 				F971231929CE328800DBAFDA /* AttachmentsGrid.swift in Sources */,
 				F971231B29CEE43200DBAFDA /* UIStackView.swift in Sources */,
 				5A22000629CC4EBC00CF7969 /* Assets.swift in Sources */,
 				5AC087D129C7AAA800A01A58 /* DiscordMessage.swift in Sources */,
 				5AA6698229C9B54700FA76B6 /* URLResponse.swift in Sources */,
+				5AB60D742B80DA3400042CF6 /* ViewController.swift in Sources */,
 				5A8C86C929C8C02400AB91A8 /* ImageLoader.swift in Sources */,
 				5AC087AF29C7869000A01A58 /* AppDelegate.swift in Sources */,
 				5A22000C29CC666100CF7969 /* MessageFieldView.swift in Sources */,

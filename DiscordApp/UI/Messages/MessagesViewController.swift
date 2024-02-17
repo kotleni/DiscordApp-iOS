@@ -13,7 +13,7 @@ final class MessagesViewController: UIViewController {
         let padding = 10.0
         let view = UITableView(frame: .zero, style: .plain)
         view.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.nameOfClass)
-        view.contentInset.bottom = self.statusBarHeight + padding
+        // view.contentInset.bottom = self.statusBarHeight + padding
         view.estimatedRowHeight = 300.0
         view.rowHeight = UITableView.automaticDimension
         view.transform = CGAffineTransform(rotationAngle: rotationAngle)
@@ -28,13 +28,13 @@ final class MessagesViewController: UIViewController {
         return textField
     }()
     
-    private lazy var messageSendButton: CircularButton = {
+    private var messageSendButton: CircularButton = {
         let button = CircularButton(type: .system)
         button.backgroundColor = Assets.Colors.buttonColor.color
         button.tintColor = .white
         button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.addTarget(self, action: #selector(sendMessage(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         return button
     }()
     

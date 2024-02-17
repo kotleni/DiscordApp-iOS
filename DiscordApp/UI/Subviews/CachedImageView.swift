@@ -15,7 +15,7 @@ class CachedImageView: UIImageView {
     
     private var imageType: ImageType = .content
     
-    private lazy var charLabel: UILabel = {
+    private var charLabel: UILabel = {
         let view = UILabel()
         view.backgroundColor = Assets.Colors.discord.color
         view.textColor = .white

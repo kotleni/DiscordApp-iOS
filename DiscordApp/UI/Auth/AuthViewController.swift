@@ -99,7 +99,7 @@ extension AuthViewController: WKScriptMessageHandler {
             print("Token received: \(token)")
             TokenService.userToken = token
             dismiss(animated: true)
-            delegate?.authViewController(didAuth: true, token: token)
+            self.delegate?.authViewController(didAuth: true, token: token)
         default:
             print("Invoked unknown js handler: \(message.name)")
         }

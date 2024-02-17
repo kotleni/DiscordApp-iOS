@@ -32,14 +32,14 @@ final class MessageTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var avatarImageView: CachedImageView = {
+    private var avatarImageView: CachedImageView = {
         let avatarImageView = CachedImageView(type: .avatar)
         avatarImageView.backgroundColor = .white
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         return avatarImageView
     }()
     
-    private lazy var attachmentsGrid: AttachmentsGrid = {
+    private var attachmentsGrid: AttachmentsGrid = {
         let attachmentGrid = AttachmentsGrid()
         attachmentGrid.isHidden = true
 //        attachmentGrid.backgroundColor = .yellow

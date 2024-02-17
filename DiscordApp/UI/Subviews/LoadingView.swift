@@ -8,7 +8,7 @@
 import UIKit
 
 // TODO: Rename
-final class ToastView: UIView {
+final class LoadingView: UIView {
     private let indicator = UIActivityIndicatorView()
     
     private var isShown: Bool { showTimer != nil }
@@ -143,17 +143,17 @@ final class ToastView: UIView {
 }
 
 extension UIViewController {
-    private var subviewToast: ToastView? {
-        view.subviews.first { $0 is ToastView } as? ToastView
+    private var subviewToast: LoadingView? {
+        view.subviews.first { $0 is LoadingView } as? LoadingView
     }
-    private var navigationBarToast: ToastView? {
-        navigationController?.navigationBar.superview?.subviews.first { $0 is ToastView } as? ToastView
+    private var navigationBarToast: LoadingView? {
+        navigationController?.navigationBar.superview?.subviews.first { $0 is LoadingView } as? LoadingView
     }
-    private var toastView: ToastView? {
+    private var toastView: LoadingView? {
         subviewToast ?? navigationBarToast
     }
     
-    func showToast(
+    func showLoadingView(
         duration: TimeInterval? = nil,
         completion: (() -> Void)? = nil
     ) {
@@ -165,13 +165,13 @@ extension UIViewController {
             return
         }
         
-        let toastView = ToastView()
+        let toastView = LoadingView()
         toastView.alpha = 0.0
         toastView.insert(into: self)
         toastView.show(duration: duration, completion: completion)
     }
     
-    func hideToast() {
+    func hideLoadingView() {
         toastView?.hide()
     }
 }
