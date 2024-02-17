@@ -10,7 +10,7 @@ import UIKit
 // MARK: UIViewController
 final class MessagesViewController: ViewController<MessagesView> {
     private var channel: DiscordChannel?
-    private let watchdogTimerDelay = 1.5      // in secs
+    private let watchdogTimerDelay = 4.5      // in secs
     
     private var messages: [DiscordMessage] = []
     
