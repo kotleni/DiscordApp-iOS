@@ -7,6 +7,7 @@
 
 import UIKit
 
+// TODO: Rename
 final class ToastView: UIView {
     private let indicator = UIActivityIndicatorView()
     
@@ -70,7 +71,7 @@ final class ToastView: UIView {
         ])
     }
     
-    func update(duration: TimeInterval, completion: (() -> Void)?) {
+    func update(duration: TimeInterval?, completion: (() -> Void)?) {
         self.completion = completion
 
         showTimer?.invalidate()
@@ -78,7 +79,7 @@ final class ToastView: UIView {
         setupShowTimer(duration: duration)
     }
     
-    func show(duration: TimeInterval, completion: (() -> Void)?) {
+    func show(duration: TimeInterval?, completion: (() -> Void)?) {
         self.completion = completion
         fadeOutAnimation?.stopAnimation(true)
         fadeInView()
@@ -103,7 +104,9 @@ final class ToastView: UIView {
         }
     }
     
-    private func setupShowTimer(duration: TimeInterval) {
+    private func setupShowTimer(duration: TimeInterval?) {
+        guard let duration else { return }
+        
         let timer = Timer(timeInterval: duration, repeats: false) { [weak self] _ in
             self?.fadeOutView()
         }
@@ -151,7 +154,7 @@ extension UIViewController {
     }
     
     func showToast(
-        duration: TimeInterval = 5.0,
+        duration: TimeInterval? = nil,
         completion: (() -> Void)? = nil
     ) {
         if let toastView {
