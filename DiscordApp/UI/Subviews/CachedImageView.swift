@@ -8,7 +8,7 @@
 import UIKit
 
 /// ImageView for avatar, can generate single char image
-class CachedImageView: UIImageView {
+final class CachedImageView: UIImageView {
     enum ImageType {
         case avatar, content
     }

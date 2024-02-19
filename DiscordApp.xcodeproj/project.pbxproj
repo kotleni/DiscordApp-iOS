@@ -47,6 +47,8 @@
 		5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087D729C868CD00A01A58 /* MainViewController.swift */; };
 		5AC087DD29C882B600A01A58 /* GuildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC087DC29C882B600A01A58 /* GuildViewCell.swift */; };
 		5AC6354929CD8883003C4CE9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC6354829CD8883003C4CE9 /* Coordinator.swift */; };
+		5AD2FFB12B821A6E007CE847 /* ImagePreviewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2FFB02B821A6E007CE847 /* ImagePreviewModal.swift */; };
+		5AD2FFB32B822164007CE847 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2FFB22B822164007CE847 /* CarouselView.swift */; };
 		96C426EC28D1D58182B295F5 /* Pods_DiscordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */; };
 		F971231929CE328800DBAFDA /* AttachmentsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971231829CE328800DBAFDA /* AttachmentsGrid.swift */; };
 		F971231B29CEE43200DBAFDA /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971231A29CEE43200DBAFDA /* UIStackView.swift */; };
@@ -100,6 +102,8 @@
 		5AC087D729C868CD00A01A58 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AC087DC29C882B600A01A58 /* GuildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildViewCell.swift; sourceTree = "<group>"; };
 		5AC6354829CD8883003C4CE9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5AD2FFB02B821A6E007CE847 /* ImagePreviewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewModal.swift; sourceTree = "<group>"; };
+		5AD2FFB22B822164007CE847 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		9E4C6B68594B3910FCC39AA5 /* Pods_DiscordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiscordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B728ACE47C1728A2AF16C50A /* Pods-DiscordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscordApp.debug.xcconfig"; path = "Target Support Files/Pods-DiscordApp/Pods-DiscordApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F971231829CE328800DBAFDA /* AttachmentsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsGrid.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				5AB60D752B80E07C00042CF6 /* LoadingView.swift */,
 				5A8C86D529C90F0300AB91A8 /* DividerView.swift */,
 				5A8C86D629C90F0300AB91A8 /* CachedImageView.swift */,
+				5AD2FFB02B821A6E007CE847 /* ImagePreviewModal.swift */,
+				5AD2FFB22B822164007CE847 /* CarouselView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -451,12 +457,14 @@
 			files = (
 				5A8C86C329C89DA700AB91A8 /* GuildSelectView.swift in Sources */,
 				5AB60D722B80D92C00042CF6 /* MainView.swift in Sources */,
+				5AD2FFB32B822164007CE847 /* CarouselView.swift in Sources */,
 				5AA6697C29C9B4BF00FA76B6 /* NSObject.swift in Sources */,
 				5A8C86D829C90F0300AB91A8 /* CachedImageView.swift in Sources */,
 				5AC087CB29C7AA6E00A01A58 /* DiscordGuild.swift in Sources */,
 				F9D055ED29CA20EF00C55037 /* CircularButton.swift in Sources */,
 				5A4544AB29CB14CC006B40D6 /* UIColor.swift in Sources */,
 				5AA6698829C9B67300FA76B6 /* NetworkingError.swift in Sources */,
+				5AD2FFB12B821A6E007CE847 /* ImagePreviewModal.swift in Sources */,
 				5AC087D829C868CD00A01A58 /* MainViewController.swift in Sources */,
 				5AC6354929CD8883003C4CE9 /* Coordinator.swift in Sources */,
 				F9D055EA29C8C70400C55037 /* MessageTableViewCell.swift in Sources */,

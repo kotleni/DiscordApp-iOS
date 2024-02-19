@@ -102,5 +102,24 @@ extension MessagesViewController: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 extension MessagesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let message = messages[indexPath.row]
+        
+        // Get all images in attachments
+        let urls = message.attachments.filter {
+            $0.contentType?.split(separator: "/").first == "image"
+        }.map {
+            $0.url
+        }
+        
+        // Don't do anything if no images attachments
+        if urls.isEmpty { return indexPath }
+        
+        // Show images preview
+        let imagePreviewModal = ImagePreviewModal()
+        imagePreviewModal.setImagesUrl(urls: urls)
+        imagePreviewModal.modalPresentationStyle = .formSheet
+        present(imagePreviewModal, animated: true)
+        return indexPath
+    }
 }
